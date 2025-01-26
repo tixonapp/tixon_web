@@ -1,0 +1,8 @@
+@import "tailwindcss";
+body{
+  background-color: #e7ffe5;
+  color: #2b300e;
+}
+.signin{
+  color:#e7ffe5;
+}
