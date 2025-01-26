@@ -3,13 +3,14 @@ const Search = () => {
     return (
         <>
         <div className="SearchBar
+        ml-8
         flex flex-row items-center justify-between
         px-2
         border-[1px] w-pull md:w-auto py-2 rounded-full shadow-sm cursor-pointer">
             <div className="text-sm px-4 font-semibold">
                 Anywhere
             </div>
-            <div className="text-sm px-4 font-semibold">
+            <div className="text-sm px-4 font-semibold border-x-[1px]">
                 Any week
             </div>
             <div className="text-sm px-4 font-semibold">

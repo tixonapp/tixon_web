@@ -1,3 +1,4 @@
+import FilterOption from "./FilterOption";
 import Logo from "./Logo";
 import Search from "./Search";
 import SignInOptions from "./SignInOptions";
@@ -8,7 +9,10 @@ const Navbar = () => {
     <>
     <div className="px-20 flex flex-row items-center justify-between fixed w-full z-20 border-b-[0.5px] border-[#2b300e] py-3">
       <Logo></Logo>
+      <div className="flex flex-row items-center">
       <Search></Search>
+      <FilterOption></FilterOption>
+      </div>
       <SignInOptions></SignInOptions>
     </div>
     </>
