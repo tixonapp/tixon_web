@@ -1,0 +1,4 @@
+.logo {
+    width: 6.25rem; /* equivalent to w-25 in Tailwind */
+    cursor: pointer;
+}

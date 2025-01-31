@@ -1,0 +1,6 @@
+.siginOptions {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem; /* equivalent to Tailwind's gap-2 */
+    align-items: center;
+}
