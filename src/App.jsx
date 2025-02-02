@@ -1,6 +1,7 @@
 
 import EventSections from './landing_page/components/EventsSection/EventsSection'
 import Navbar from './landing_page/components/NavBar/NavBar'
+import PhoneNavbar from './landing_page/components/PhoneNavBar/PhoneNavBar'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
     <Navbar></Navbar>
+    <PhoneNavbar></PhoneNavbar>
     <EventSections></EventSections>
     </>
   )

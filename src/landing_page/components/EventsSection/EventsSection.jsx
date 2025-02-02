@@ -3,21 +3,18 @@ import './EventsSection.css';
 const EventSections = () => {
   const items = Array.from({ length: 12 }, (_, index) => ({
     id: index + 1,
-    title: `Item ${index + 1}`
+    title: `https://picsum.photos/200/300?random=${index}`
   }));
 
   return (
-    <div className="min-h-screen w-full bg-gray-100 
-    px-5 sm:px-5 md:px-10  lg:px-10 top-[80px] absolute">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="eventsSection">
         {items.map((e) => (
             <EventCard
             key={e.id}
-            name={e.id}
+            name={e.title}
             ></EventCard>
         ))}
       </div>
-    </div>
   );
 };
 

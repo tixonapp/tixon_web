@@ -1,11 +1,16 @@
 import './EventCard.css';
-const EventCard = () => {
+// eslint-disable-next-line react/prop-types
+const EventCard = ({name}) => {
     return (
-      <div
-      className="
-      eventCard "
-    >
-      <div className="eventImage bg-amber-200 w-full h-[70%]">
+      <div className="eventCard ">
+      <div className="eventImage">
+        <img src={name} alt=""/>
+      </div>
+      <div className="eventDescription">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
     </div>
     );
