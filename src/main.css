@@ -1,0 +1,13 @@
+@import "tailwindcss";
+* {
+  box-sizing: border-box;
+}
+body{
+  background-color: #e7ffe5;
+  background-color: #e7ffe5;
+  color: #2b300e;
+  box-sizing: border-box;
+}
+.signin{
+  color:#e7ffe5;
+}

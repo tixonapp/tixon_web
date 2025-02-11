@@ -1,0 +1,10 @@
+.filterIcon{
+    height: 20;
+    width: 20;
+    border-color:  #2b300e;
+    border-radius: 1000px;
+    color:  #e7ffe5;
+    background-color: #2b300e;
+    padding: 5px;
+    border-width: 1px;
+}

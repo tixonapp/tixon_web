@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import EventSections from './landing_page/components/EventsSection/EventsSection'
+import Navbar from './landing_page/components/NavBar/NavBar'
+import PhoneNavbar from './landing_page/components/PhoneNavBar/PhoneNavBar'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-    <p>
-      hello world
-    </p>
+    <Navbar></Navbar>
+    <PhoneNavbar></PhoneNavbar>
+    <EventSections></EventSections>
     </>
   )
 }

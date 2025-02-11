@@ -1,0 +1,43 @@
+.eventsSection {
+    /* Base Grid Properties */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* grid-cols-1 */
+    gap: 1rem; /* gap-4 */
+    
+    /* Sizing and Position */
+    min-height: 100vh; /* min-h-screen */
+    width: 100%; /* w-full */
+    position: absolute;
+    top: 100px;
+    
+    /* Background */
+    background-color: #e7ffe5;
+    
+    /* Responsive Padding */
+    padding: 0 1.25rem; /* px-5 default */
+}
+
+
+/* Small Screen (sm) */
+@media screen and (min-width: 640px) {
+    .eventsSection {
+        grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+        padding: 0 1.25rem; /* sm:px-5 */
+    }
+}
+
+/* Medium Screen (md) */
+@media screen and (min-width: 768px) {
+    .eventsSection {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+        padding: 0 2.5rem; /* md:px-10 */
+    }
+}
+
+/* Large Screen (lg) */
+@media screen and (min-width: 1024px) {
+    .eventsSection {
+        grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-3 */
+        padding: 12px 150px;
+    }
+}
