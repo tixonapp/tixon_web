@@ -8,7 +8,7 @@
     align-items: center; /* Centers items vertically */
     justify-content: space-between; /* Spaces items evenly */
     padding: 12px 150px; /* Equivalent to py-3 (12px) and px-20 (80px) */
-    background-color: #e7ffe5; /* Light green background */
+    background-color: #ffffff; /* Light green background */
     border-bottom: 0.5px solid #2b300e; /* Thin bottom border */
 }
 

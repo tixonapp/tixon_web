@@ -1,0 +1,124 @@
+.venue {
+    background: #fff;
+    margin: auto;
+    max-width: 1200px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .venue-content {
+    display: grid;
+    grid-template-columns: 4fr 6fr; /* 40-60 split */
+    align-items: stretch;
+    gap: 2rem;
+    padding: 2rem;
+    min-height: 500px;
+  }
+  
+  .venue-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .venue-image {
+    width: 100%;
+    height: 200px; /* Reduced image height */
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .map {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border: 0;
+    border-radius: 8px;
+  }
+  
+  .venue-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #0066cc;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    align-self: flex-start;
+    margin-top: auto; /* Pushes button to bottom */
+  }
+  
+  .venue-button:hover {
+    background: #0052a3;
+  }
+  
+  @media (max-width: 768px) {
+    .venue-content {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    
+    .map {
+      height: 300px;
+    }
+    
+    .venue-button {
+      margin-top: 1rem;
+    }
+  }
+  /* Add these styles to your Venue.css */
+.venue-left {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .address-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .university-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+  }
+  
+  .address-details p {
+    margin: 0.25rem 0;
+    color: #666;
+    line-height: 1.4;
+  }
+  
+  .divider {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 1.5rem 0;
+  }
+  
+  .directions-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .directions-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #0066cc;
+    color: #0066cc;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .directions-button:hover {
+    background: #0066cc;
+    color: white;
+  }
+  
+  /* Keep existing responsive styles */

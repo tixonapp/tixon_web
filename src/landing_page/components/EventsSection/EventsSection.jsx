@@ -1,4 +1,4 @@
-import EventCard from "/home/vkalyanram/tixon/src/landing_page/components/EventCard/EventCard.jsx";
+import EventCard from "../EventCard/EventCard";
 import './EventsSection.css';
 const EventSections = () => {
   const items = Array.from({ length: 12 }, (_, index) => ({

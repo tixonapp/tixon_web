@@ -1,8 +1,9 @@
 import './PhoneNavBar.css'
 import Logo from "../Logo/Logo";
-import SearchIcon from '../SearchIcon/SearchIcon';
+// import SearchIcon from '../SearchIcon/SearchIcon';
+import Search from '../Search/Search'
 import ProfileIcon from '../ProfileIcon/ProfileIcon';
-import FilterIcon from '../FilterIcon/FilterIcon';
+// import FilterIcon from '../FilterIcon/FilterIcon';
 const PhoneNavbar = () => {
 
   return (
@@ -10,8 +11,9 @@ const PhoneNavbar = () => {
     <div className="phoneNavBar">
       <Logo/>
       <div className='flex items-center'>
-      <SearchIcon/>
-      <FilterIcon/>
+        <Search/>
+      {/* <SearchIcon/> */}
+      {/* <FilterIcon/> */}
       <ProfileIcon/>
       </div>
     </div>
