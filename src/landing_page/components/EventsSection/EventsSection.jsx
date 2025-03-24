@@ -1,21 +1,15 @@
-import EventCard from "../EventCard/EventCard";
-import './EventsSection.css';
-const EventSections = () => {
-  const items = Array.from({ length: 12 }, (_, index) => ({
-    id: index + 1,
-    title: `https://picsum.photos/200/300?random=${index}`
-  }));
+import EventCard from "../EventCard/EventCard"
+import data from "../../../Data/data.json"
+import "./EventsSection.css"
 
+const EventSections = () => {
   return (
     <div className="eventsSection">
-        {items.map((e) => (
-            <EventCard
-            key={e.id}
-            name={e.title}
-            ></EventCard>
-        ))}
-      </div>
-  );
-};
+      {data.map((event) => (
+        <EventCard key={event.id} event={event} />
+      ))}
+    </div>
+  )
+}
+export default EventSections
 
-export default EventSections;

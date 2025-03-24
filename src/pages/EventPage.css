@@ -11,7 +11,7 @@ Base Styles
   }
   .hero-banner {
     position: relative;
-    height: 70vh;
+  
     overflow: hidden;
   }
   .event-content {

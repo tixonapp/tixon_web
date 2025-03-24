@@ -1,19 +1,18 @@
 
 .description-container {
-    background: #fff;
+ 
     margin: auto;
-    /* margin-left: 190px; */
-    max-width: 1200px;
-    border-radius: 12px;
+
     overflow: hidden;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+    max-width: 1300px;
+    padding: 30px;
+   
+    /* background: #e8e8e8; */
+    background: #ffffff;
   }
   .title{
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #000000;
-    /* text-align: left; */
   }

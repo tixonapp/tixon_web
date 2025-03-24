@@ -1,9 +1,16 @@
-.contact-container {
-    width: 100%;
-    padding: 2rem;
-    background-color: white;
-  }
+
+  .contact-container {
+  margin-top: 70px;
+  background: #ffffff;
+  padding: 30px;
+  /* background: #000000; */
+  margin: auto;
+  /* max-width: 1400px; */
+  /* border-radius: 12px; */
+  overflow: hidden;
   
+  
+}
   .contact-content {
     max-width: 600px;
     margin: 0 auto;
