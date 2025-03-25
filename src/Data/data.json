@@ -2,6 +2,7 @@
   {
     "id": 1,
     "eventName": "techfest2025",
+    "isAvailable": true,
     "eventDate": "Sep 15, 2025",
     "images": [
       "https://picsum.photos/200/300",
@@ -53,6 +54,7 @@
   {
     "id": 2,
     "eventName": "literatureFestival2025",
+    "isAvailable": false,
     "eventDate": "Oct 20, 2025",
     "images": [
       "https://picsum.photos/200/300",
@@ -103,6 +105,7 @@
   {
     "id": 3,
     "eventName": "sportsDay2025",
+    "isAvailable": true,
     "eventDate": "Nov 05, 2025",
     "images": [
       "https://picsum.photos/200/300",
@@ -154,6 +157,7 @@
   {
     "id": 4,
     "eventName": "startupPitch2025",
+    "isAvailable": true,
     "eventDate": "Dec 10, 2025",
     "images": [
       "https://picsum.photos/200/300",
@@ -205,6 +209,7 @@
   {
     "id": 5,
     "eventName": "culturalNight2025",
+    "isAvailable": false,
     "eventDate": "Jan 15, 2026",
     "images": [
       "https://picsum.photos/200/300",

@@ -1,199 +1,227 @@
-
-.hero-banner {
-  /* margin-top: 70px; */ 
-  background: #ffffff;
-  /* background: #000000; */
-  margin: auto;
-  max-width: 1300px;
-  /* border-radius: 12px; */
-  /* overflow: hidden; */
-  height: 52vh;
-}
-
-.banner-content {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  align-items: center;
-  min-height: 400px;
-  /* padding: 2rem; */
-}
-
-.banner-text {
+.hero-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
-.heading {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #000000;
-  text-align: left;
-}
-
-.event-details {
-  font-size: 1.2rem;
-  color: #555;
-  text-align: left;
-  margin-bottom: 0.3rem;
-}
-
-.event-location {
-  font-size: 1.2rem;
-  color: #777;
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-.countdown-timer {
-  margin-top: 1rem;
-  display: flex;
-  /* gap: 1rem; */
-  align-items: center;
-  justify-content: left;
-  margin-bottom: 1rem;
-  border: 1px solid #000;
-  /* padding: 0.5rem 1rem; */
-  border-radius: 8px;
-  
-}
-
-.timer-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.5rem;
-}
-
-.time-value {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000;
-}
-
-.time-label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #555;
-}
-
-.sales-button {
-  font-size: 1rem;
-  background-color: #ccc;
-  color: #666;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: not-allowed;
-  text-align: left;
+.banner-image-container {
+  width: 90%;
+  height: 60vh;
+  overflow: hidden;
+  align-self: center;
+  border-radius: 10px;
 }
 
 .banner-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.event-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.content-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 1.5rem 0;
 }
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.event-content {
+  flex: 1;
+}
+
+.event-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  /* margin-bottom: 1rem; */
+}
+
+.event-details {
+  display: flex;
+  gap: 1.5rem;
+  /* margin-bottom: 1.5rem; */
+  flex-wrap: wrap;
+}
+
+.detail-item {
+  font-size: 1.1rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.location {
+  font-weight: 500;
+  color: #222;
+}
+
+.countdown-timer {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.timer-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.8rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.time-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.time-label {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.separator {
+  color: #666;
+  font-size: 1.5rem;
+  align-self: center;
+  margin: 0 0.25rem;
+}
+
 .social-icons {
   display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-top: 0.5rem;
+  gap: 1.5rem;
+  /* margin-top: 1.5rem; */
 }
 
 .icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #555;
-  background: #eee;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: 0.3s;
-  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 .icon:hover {
   color: #000;
-  background: #ddd;
 }
 
+.price-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  min-width: 300px;
+  max-height: 150px;
+}
 
-/* 
-.banner-content {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  align-items: center;
-  min-height: 400px;
-  padding: 2rem;
-} */
+.price-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 
-/* .banner-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-} */
+.ticket-button {
+  padding: 0.8rem 2rem;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
 
-/* .heading {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #000000;
-  text-align: left;
-} */
+.ticket-button:disabled {
+  background-color: #e0e0e0;
+  color: #666;
+  cursor: not-allowed;
+}
 
-/* Mobile Styles */
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-  
-  .banner-content {
-    grid-template-columns: 1fr;
-    padding: 1rem;
+.ticket-button:not(:disabled):hover {
+  background-color: #3a3a3a;
+}
+
+@media (max-width: 768px) {
+  .banner-image-container {
+    height: 40vh;
+  }
+
+  .content-grid {
+    flex-direction: column;
     gap: 1.5rem;
-    min-height: auto;
   }
 
-  .heading {
-    font-size: 2rem;
+  .event-title {
+    font-size: 1.75rem;
   }
 
-  .event-details,
-  .event-location {
-    font-size: 1rem;
-  }
-
-  .countdown-timer {
-    width: 100%;
-    justify-content: space-between;
+  .event-details {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   .timer-box {
-    padding: 0.25rem;
+    min-width: 70px;
+    padding: 0.6rem;
   }
 
-  .time-value {
+  .separator {
+    font-size: 1.2rem;
+  }
+
+  .price-card {
+    width: 100%;
+    min-width: auto;
+    padding: 1.25rem;
+  }
+
+  .price-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-image-container {
+    height: 30vh;
+  }
+
+  .event-title {
     font-size: 1.5rem;
   }
 
-  .banner-image {
-    margin: 100px;
-    order: -1; 
-    /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-    /* Removed display: none; to ensure the image is visible */
+  .countdown-timer {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .social-icons {
-    justify-content: center;
-    width: 100%;
+  .timer-box {
+    min-width: calc(50% - 1rem);
+    margin-bottom: 0.5rem;
   }
 }

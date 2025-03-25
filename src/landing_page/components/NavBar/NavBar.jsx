@@ -1,17 +1,16 @@
-import './NavBar.css'
+import './NavBar.css';
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 import SignInOptions from "../SignInOptions/SignInOptions";
 
-const Navbar = () => {
-
+const Navbar = ({ onSearch }) => {
   return (
     <>
-    <div className="navBar">
-      <Logo/>
-      <Search/>
-      <SignInOptions/>
-    </div>
+      <div className="navBar">
+        <Logo/>
+        <Search onSearch={onSearch} />
+        <SignInOptions/>
+      </div>
     </>
   );
 };

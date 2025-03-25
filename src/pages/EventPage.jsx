@@ -5,10 +5,11 @@ import Description from "../Event_page/components/Description/Description";
 import Venue from "../Event_page/components/Venue/Venue";
 import Contact from "../Event_page/components/Contact/Contact";
 import "./EventPage.css";
+
 const EventPage = () => {
   const { id } = useParams();
   const event = events.find(event => event.id === parseInt(id, 10));
-console.log(event);
+
   if (!event) {
     return (
       <div className="error-page">
@@ -25,7 +26,7 @@ console.log(event);
       <HeroBanner event={event} />
       <Description event={event} />
       <Venue event={event} />
-      <Contact />
+      <Contact event={event} />
     </div>
   );
 };
