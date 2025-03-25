@@ -1,0 +1,12 @@
+/* App.css */
+.main-content {
+  padding-top: 100px; /* Adjust this value based on the combined height of Navbar and PhoneNavbar */
+  /* background-color: #e8e8e8; */
+}
+
+/* Optional: Add responsive styles */
+@media (max-width: 800px) {
+  .main-content {
+    padding-top: 80px; /* Adjust for smaller screens where only PhoneNavbar is visible */
+  }
+}

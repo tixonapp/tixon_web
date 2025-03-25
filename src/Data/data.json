@@ -1,0 +1,260 @@
+[
+  {
+    "id": 1,
+    "eventName": "techfest2025",
+    "isAvailable": true,
+    "eventDate": "Sep 15, 2025",
+    "images": [
+      "https://picsum.photos/1000/300",
+      "https://picsum.photos/800/300"
+    ],
+    "location": "IIT Madras, Chennai, India",
+    "eventDescription": "A tech festival showcasing cutting-edge innovations and interactive sessions with tech industry leaders. Includes hackathons, workshops, and product demos.",
+    "organizer": "IIT Madras Technology Club",
+    "eventType": "Tech Festival",
+    "ticketPrice": "₹300",
+    "website": "https://techfest2025.iitm.ac.in",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitmadras",
+      "twitter": "https://twitter.com/iitmadras",
+      "instagram": "https://instagram.com/iitmadras"
+    },
+    "sponsors": [
+      "TechCorp",
+      "CodeX",
+      "Innovate Inc."
+    ],
+    "eventAgenda": [
+      {
+        "time": "9:00 AM",
+        "activity": "Inaugural Address"
+      },
+      {
+        "time": "10:00 AM",
+        "activity": "Hackathon Kickoff"
+      },
+      {
+        "time": "12:00 PM",
+        "activity": "Product Demos"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Panel Discussion: The Future of AI"
+      },
+      {
+        "time": "4:00 PM",
+        "activity": "Closing Ceremony"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@techfest2025.iitm.ac.in",
+      "phone": "+91 9876543210"
+    }
+  },
+  {
+    "id": 2,
+    "eventName": "literatureFestival2025",
+    "isAvailable": false,
+    "eventDate": "Oct 20, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "St. Xavier's College, Mumbai, India",
+    "eventDescription": "A celebration of literature, with a focus on contemporary writers, poetry readings, and discussions on the evolution of storytelling.",
+    "organizer": "St. Xavier's Literature Society",
+    "eventType": "Literature Festival",
+    "ticketPrice": "₹150",
+    "website": "https://literaturefest2025.sxcc.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/stxaviersmumbai",
+      "twitter": "https://twitter.com/stxaviersmumbai",
+      "instagram": "https://instagram.com/stxaviersmumbai"
+    },
+    "sponsors": [
+      "LiteratureWorks",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:00 AM",
+        "activity": "Poetry Reading Session"
+      },
+      {
+        "time": "1:00 PM",
+        "activity": "Panel Discussion: The Future of Literature"
+      },
+      {
+        "time": "3:00 PM",
+        "activity": "Book Launch: Emerging Voices"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Ceremony"
+      }
+    ],
+    "contactInfo": {
+      "email": "info@literaturefest2025.sxcc.edu",
+      "phone": "+91 9898765432"
+    }
+  },
+  {
+    "id": 3,
+    "eventName": "sportsDay2025",
+    "isAvailable": true,
+    "eventDate": "Nov 05, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Christ University, Bangalore, India",
+    "eventDescription": "A day full of competitive sports events, from athletics to team games, celebrating physical fitness and sportsmanship among students.",
+    "organizer": "Christ University Sports Club",
+    "eventType": "Sports Event",
+    "ticketPrice": "₹100",
+    "website": "https://sportsday2025.christuniversity.in",
+    "socialMedia": {
+      "facebook": "https://facebook.com/christuniversity",
+      "twitter": "https://twitter.com/christuniversity",
+      "instagram": "https://instagram.com/christuniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "Adidas",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "8:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "9:00 AM",
+        "activity": "Track & Field Events"
+      },
+      {
+        "time": "12:00 PM",
+        "activity": "Team Sports: Football & Basketball"
+      },
+      {
+        "time": "3:00 PM",
+        "activity": "Fun Games & Activities"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Ceremony & Prize Distribution"
+      }
+    ],
+    "contactInfo": {
+      "email": "sports@christuniversity.in",
+      "phone": "+91 8765432109"
+    }
+  },
+  {
+    "id": 4,
+    "eventName": "startupPitch2025",
+    "isAvailable": true,
+    "eventDate": "Dec 10, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Pilani, Goa, India",
+    "eventDescription": "An entrepreneurial event where students pitch their startup ideas to investors and industry experts. Includes workshops, networking, and mentoring.",
+    "organizer": "BITS Pilani Entrepreneurship Club",
+    "eventType": "Startup Event",
+    "ticketPrice": "₹500",
+    "website": "https://startuppitch2025.bitsgoa.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitsgoa",
+      "twitter": "https://twitter.com/bitsgoa",
+      "instagram": "https://instagram.com/bitsgoa"
+    },
+    "sponsors": [
+      "Startup India",
+      "TechCrunch",
+      "BusinessInsider"
+    ],
+    "eventAgenda": [
+      {
+        "time": "9:00 AM",
+        "activity": "Inaugural Session"
+      },
+      {
+        "time": "10:00 AM",
+        "activity": "Pitching Round 1"
+      },
+      {
+        "time": "12:00 PM",
+        "activity": "Startup Mentorship Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Pitching Round 2"
+      },
+      {
+        "time": "4:00 PM",
+        "activity": "Networking and Closing Ceremony"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startuppitch2025.bitsgoa.edu",
+      "phone": "+91 9876543212"
+    }
+  },
+  {
+    "id": 5,
+    "eventName": "culturalNight2025",
+    "isAvailable": false,
+    "eventDate": "Jan 15, 2026",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "University of Delhi, Delhi, India",
+    "eventDescription": "A vibrant evening celebrating various cultural performances, including music, dance, and drama. A chance for students to showcase their artistic talents.",
+    "organizer": "University of Delhi Cultural Society",
+    "eventType": "Cultural Event",
+    "ticketPrice": "₹200",
+    "website": "https://culturalnight2025.du.ac.in",
+    "socialMedia": {
+      "facebook": "https://facebook.com/universityofdelhi",
+      "twitter": "https://twitter.com/universityofdelhi",
+      "instagram": "https://instagram.com/universityofdelhi"
+    },
+    "sponsors": [
+      "Cultural Arts Foundation",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "6:00 PM",
+        "activity": "Opening Performance: Traditional Dance"
+      },
+      {
+        "time": "7:00 PM",
+        "activity": "Live Music Concert"
+      },
+      {
+        "time": "8:00 PM",
+        "activity": "Drama & Theatrical Performance"
+      },
+      {
+        "time": "9:00 PM",
+        "activity": "Dance Flash Mob"
+      },
+      {
+        "time": "10:00 PM",
+        "activity": "Closing Performance"
+      }
+    ],
+    "contactInfo": {
+      "email": "cultural@du.ac.in",
+      "phone": "+91 1234567890"
+    }
+  }
+]

@@ -1,20 +1,32 @@
-import EventCard from "/home/vkalyanram/tixon/src/landing_page/components/EventCard/EventCard.jsx";
-import './EventsSection.css';
+import EventCard from "../EventCard/EventCard";
+import data from "../../../Data/data.json";
+import { useFilters } from '../../../Context/FilterContext';
+import "./EventsSection.css";
+
 const EventSections = () => {
-  const items = Array.from({ length: 12 }, (_, index) => ({
-    id: index + 1,
-    title: `https://picsum.photos/200/300?random=${index}`
-  }));
+  const { filters } = useFilters();
+
+  // filtering the events based on the filters
+  const filteredEvents = data.filter(event => {
+    console.log(event.eventDate);
+    const matchesLocation = !filters.location || 
+      event.location.toLowerCase().includes(filters.location.toLowerCase());
+    
+    const matchesEventType = !filters.eventType || 
+      event.eventType.toLowerCase() === filters.eventType.toLowerCase();
+    
+    const matchesDate = !filters.date || 
+      new Date(event.eventDate).toDateString() === filters.date.toDateString();
+
+    return matchesLocation && matchesEventType && matchesDate;
+  });
 
   return (
     <div className="eventsSection">
-        {items.map((e) => (
-            <EventCard
-            key={e.id}
-            name={e.title}
-            ></EventCard>
-        ))}
-      </div>
+      {filteredEvents.map((event) => (
+        <EventCard key={event.id} event={event} />
+      ))}
+    </div>
   );
 };
 
