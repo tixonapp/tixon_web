@@ -1,0 +1,55 @@
+Base Styles
+.event-page {
+    /* font-family: 'Poppins', sans-serif; */
+    color: #333;
+    line-height: 1.6;
+    width: 100%;
+  max-width: 1440px; 
+  margin: 0 ;
+  padding: 0 20px; 
+  background-color: #666;
+  }
+  .hero-banner {
+    position: relative;
+  
+    overflow: hidden;
+  }
+  .event-content {
+    width: 100%;
+    /* padding: 0 40px; Add padding on sides */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .banner-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    /* background: linear-gradient(transparent, rgba(0,0,0,0.8)); */
+    color: white;
+    text-align: center;
+  }
+  @media screen and (max-width: 768px) {
+    .event-content {
+      padding: 0 20px;
+    }
+  }
+  .error-page {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    width: 100%;
+  max-width: 1440px; 
+  margin: 0 ;
+  padding: 0 20px; 
+  }
+  .error-content {
+    width: 100%;
+    /* padding: 0 40px; Add padding on sides */
+    padding-top: 5cm;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }

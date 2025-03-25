@@ -1,13 +1,21 @@
+import { memo } from 'react';
 import './Logo.css';
+import { Link } from 'react-router-dom';
+
 const Logo = () => {
-    return (
-      <div className="logo">
-            <img 
-            color="#2b300e"
-            src="/assets/logo.png"
+  return (
+    <div className="logo">
+      <Link to="/">
+      <img
+        src="/assets/logo.png"
+        alt="Logo"
+        width="auto"
+        height="auto"
+        loading="lazy"
       />
-      </div>
-    );
-  };
-  
-  export default Logo;
+      </Link> 
+    </div>
+  );
+};
+
+export default memo(Logo);
