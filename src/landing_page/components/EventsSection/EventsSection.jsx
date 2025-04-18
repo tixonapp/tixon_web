@@ -8,11 +8,7 @@ const EventSections = () => {
   const { filters } = useFilters();
   // Initialize with default 8 items
   const [visibleEvents, setVisibleEvents] = useState(8);
-  
   // cleanup
-  
-
-  
   // Keep the scroll position related code as is
   const storeScrollPosition = () => {
     if (window.location.pathname === '/') {
