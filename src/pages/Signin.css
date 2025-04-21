@@ -1,121 +1,172 @@
 .contact-container {
-    margin-top: 70px;
-    background: #ffffff;
-    padding: 30px;
-    margin: auto;
-    overflow: hidden;
-  }
-  
-  .contact-content {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .contact-header {
-    text-align: center;
-    margin-bottom: 2rem;
+  margin-top: 70px;
+  background: #ffffff;
+  padding: 30px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.contact-content {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2b300e;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.submit-btn {
+  background-color: #2b300e;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #3c4214;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.google-signin-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.forgot-password-container {
+  text-align: right;
+  margin-top: -0.5rem;
+}
+
+.forgot-password-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.signup-link-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.signup-link {
+  color: #2b300e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
   }
   
   .contact-header h2 {
-    font-size: 2rem;
-    color: #000;
-    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
   }
-  
-  .contact-header p {
-    color: #666;
-    font-size: 1.1rem;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .form-group label {
-    color: #333;
-    font-weight: 500;
-  }
-  
-  .form-group input {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #333;
-    background-color: white;
-  }
-  
-  .form-group input:focus {
-    outline: none;
-    border-color: #666;
-  }
-  
-  .submit-btn {
-    background-color: #000;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background-color: #333;
-  }
-  
-  .error {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-  }
-  
-  .forgot-password-container {
-    text-align: right;
-    margin-top: -1rem;
-  }
-  
-  .forgot-password-link {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.875rem;
-  }
-  
-  .forgot-password-link:hover {
-    text-decoration: underline;
-  }
-  
-  .signup-link-container {
-    text-align: center;
-    margin-top: 1rem;
-  }
-  
-  .signup-link {
-    color: #000;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  .signup-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .contact-container {
-      padding: 1rem;
-    }
-    
-    .contact-header h2 {
-      font-size: 1.75rem;
-    }
-  }
+}

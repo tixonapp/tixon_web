@@ -10,6 +10,7 @@ import {
   FaMap
 } from 'react-icons/fa6';
 import './HeroBanner.css';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const HeroBanner = ({ event }) => {
   const [timeLeft, setTimeLeft] = useState({});
@@ -89,6 +90,7 @@ const HeroBanner = ({ event }) => {
           src={event.images?.[0]} 
           alt={event.eventName} 
           className='banner-image' 
+          loading='lazy'
         />
       </div>
 

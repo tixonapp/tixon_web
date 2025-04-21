@@ -1,12 +1,54 @@
+// Update the imports to include location icons
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch, BiCalendar, BiMusic,BiBriefcase,BiBookOpen,BiParty,BiGroup} from "react-icons/bi";
+import { MdLocationOn } from "react-icons/md";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Search.css";
 
-const locations = ["Chennai", "Pondicherry", "Goa", "Manali", "Ooty"];
-const events = ["Concert", "Conference", "Workshop", "Festival", "Meetup"];
+// USome random aigenerated description
+const locations = [
+  { name: "Puducherry, Puducherry", description: "Great for a weekend getaway", color: "#FFF5F5", iconColor: "#FF6B6B" },
+  { name: "New Delhi, Delhi", description: "For sights like India Gate", color: "#F0FFF4", iconColor: "#38A169" },  
+  { name: "Bengaluru, Karnataka", description: "For its top-notch dining", color: "#FFF5F5", iconColor: "#DD6B20" },
+  { name: "Chennai", description: "Cultural hub of South India", color: "#F0F4FF", iconColor: "#4C51BF" },
+  { name: "Manali", description: "Mountain getaway", color: "#F0FFF4", iconColor: "#38A169" },
+  { name: "Ooty", description: "Hill station with tea gardens", color: "#F0FFF4", iconColor: "#38A169" },
+];
+
+const events = [
+  {
+    name: "Concert",
+    icon: BiMusic,
+    iconColor: "#FF6B6B",
+    color: "#FFF5F5",
+  },
+  {
+    name: "Conference",
+    icon: BiBriefcase,
+    iconColor: "#38A169",
+    color: "#F0FFF4",
+  },
+  {
+    name: "Workshop",
+    icon: BiBookOpen,
+    iconColor: "#DD6B20",
+    color: "#FFF5F5",
+  },
+  {
+    name: "Festival",
+    icon: BiParty,
+    iconColor: "#4C51BF",
+    color: "#F0F4FF",
+  },
+  {
+    name: "Meetup",
+    icon: BiGroup,
+    iconColor: "#38A169",
+    color: "#F0FFF4",
+  },
+];
 
 const Search = ({ onSearch }) => {
   const [location, setLocation] = useState("");
@@ -69,23 +111,34 @@ const Search = ({ onSearch }) => {
   return (
     <div className={isMobile ? "mobileSearchExpanded" : "searchBar"}>
       <div className="dropdown">
-        <input
-          type="text"
-          className="searchInput"
-          placeholder="Location"
-          value={location}
-          onFocus={() => setShowLocationDropdown(true)}
-          onBlur={handleLocationBlur}
-          onChange={(e) => setLocation(e.target.value)}
-        />
+        <div className="inputWrapper">
+          <MdLocationOn className="inputIcon" />
+          <input
+            type="text"
+            className="searchInput"
+            placeholder="Location"
+            value={location}
+            onFocus={() => setShowLocationDropdown(true)}
+            onBlur={handleLocationBlur}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </div>
         {showLocationDropdown && (
-          <ul className="dropdownMenu">
+          <ul className="dropdownMenu locationDropdown">
             {locations.map((loc, index) => (
               <li 
                 key={index} 
-                onMouseDown={() => setLocation(loc)}
+                onMouseDown={() => setLocation(loc.name)}
+                style={{ backgroundColor: loc.color }}
+                className="locationItem"
               >
-                {loc}
+                <div className="locationIcon" style={{ color: loc.iconColor }}>
+                  <MdLocationOn size={20} />
+                </div>
+                <div className="locationInfo">
+                  <div className="locationName">{loc.name}</div>
+                  <div className="locationDescription">{loc.description}</div>
+                </div>
               </li>
             ))}
           </ul>
@@ -93,35 +146,72 @@ const Search = ({ onSearch }) => {
       </div>
 
       <div className="dropdown">
-        <input
-          type="text"
-          className="searchInput"
-          placeholder="Event Type"
-          value={event}
-          onFocus={() => setShowEventDropdown(true)}
-          onBlur={handleEventBlur}
-          onChange={(e) => setEvent(e.target.value)}
-        />
+        <div className="inputWrapper">
+          <BiMusic className="inputIcon" />
+          <input
+            type="text"
+            className="searchInput"
+            placeholder="Event Type"
+            value={event}
+            onFocus={() => setShowEventDropdown(true)}
+            onBlur={handleEventBlur}
+            onChange={(e) => setEvent(e.target.value)}
+          />
+        </div>
         {showEventDropdown && (
-          <ul className="dropdownMenu">
-            {events.map((ev, index) => (
-              <li 
-                key={index} 
-                onMouseDown={() => setEvent(ev)}
-              >
-                {ev}
-              </li>
-            ))}
+  <ul className="dropdownMenu">
+    {events.map((eventObj, index) => (
+      <li 
+        key={index} 
+        onMouseDown={() => setEvent(eventObj.name)}
+        style={{ backgroundColor: eventObj.color }}
+        className="eventItem"
+      >
+        <div className="eventIcon" style={{ color: eventObj.iconColor }}>
+          <eventObj.icon size={20} />
+        </div>
+        <div className="eventName">{eventObj.name}</div>
+      </li>
+    ))}
           </ul>
         )}
       </div>
 
-      <DatePicker
-        selected={date}
-        onChange={(selectedDate) => setDate(selectedDate)}
-        className="searchInput datePicker"
-        placeholderText="Select Date"
-      />
+      <div className="datePickerWrapper">
+        <div className="inputWrapper">
+          <BiCalendar className="inputIcon" />
+          <DatePicker
+            selected={date}
+            onChange={(selectedDate) => setDate(selectedDate)}
+            className="searchInput datePicker"
+            placeholderText="Select Date"
+            calendarClassName="customCalendar"
+            dayClassName={date => "customDay"}
+            monthClassName={date => "customMonth"}
+            renderCustomHeader={({
+              date,
+              changeYear,
+              changeMonth,
+              decreaseMonth,
+              increaseMonth,
+              prevMonthButtonDisabled,
+              nextMonthButtonDisabled,
+            }) => (
+              <div className="customHeader">
+                <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled} className="monthNavButton">
+                  &lt;
+                </button>
+                <div className="monthYearLabel">
+                  {date.toLocaleString('default', { month: 'long' })} {date.getFullYear()}
+                </div>
+                <button onClick={increaseMonth} disabled={nextMonthButtonDisabled} className="monthNavButton">
+                  &gt;
+                </button>
+              </div>
+            )}
+          />
+        </div>
+      </div>
 
       <div className={isMobile ? "mobileButtonsContainer" : "buttonsContainer"}>
         <button className="searchIcon" onClick={handleSearch}>
