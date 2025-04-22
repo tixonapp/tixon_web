@@ -44,7 +44,23 @@ function SignupPage() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+  const handleGoogleSignUp = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/`,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          }
+        }
+      });
+      if (error) throw error;
+    } catch (error) {
+      setErrors({ ...errors, google: error.message });
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -152,6 +168,22 @@ function SignupPage() {
             {loading ? 'Signing up...' : 'Sign Up'}
           </button>
         </form>
+        <div className="divider">
+    <span>OR</span>
+</div>
+
+<button 
+    type="button" 
+    onClick={handleGoogleSignUp}
+    className="google-signin-btn"
+>
+    <img 
+        src="/assets/google.png" 
+        alt="Google" 
+        className="google-icon"
+    />
+    Sign up with Google
+</button>
       </div>
     </div>
   );

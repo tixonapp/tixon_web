@@ -24,18 +24,13 @@ const SigninPage = () => {
     e.preventDefault();
     setError(null);
     setLoading(true);
-
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: formData.email,
         password: formData.password,
       });
-
       if (error) throw error;
-
-      // Successful login
       navigate('/'); // Redirect to home page
-      
     } catch (error) {
       setError(error.message);
     } finally {
@@ -48,10 +43,13 @@ const SigninPage = () => {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${window.location.origin}/`
+          redirectTo: `${window.location.origin}/`,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          }
         }
       });
-
       if (error) throw error;
     } catch (error) {
       setError(error.message);
@@ -62,10 +60,10 @@ const SigninPage = () => {
     <div className="contact-container">
       <div className="contact-content">
         <div className="contact-header">
-          <h2>Welcome Back</h2>
-          <p>Please sign in to continue</p>
+          <h2>Sign In</h2>
+          <p>Welcome back! Please sign in to continue</p>
         </div>
-
+        
         {error && (
           <div className="error-message">
             {error}
@@ -74,14 +72,13 @@ const SigninPage = () => {
 
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter your email"
               required
             />
           </div>
@@ -94,20 +91,13 @@ const SigninPage = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Enter your password"
               required
             />
           </div>
 
-          <div className="forgot-password-container">
-            <a href="/forgot-password" className="forgot-password-link">
-              Forgot Password?
-            </a>
-          </div>
-
           <button 
             type="submit" 
-            className="submit-btn" 
+            className="submit-btn"
             disabled={loading}
           >
             {loading ? 'Signing in...' : 'Sign In'}
@@ -123,7 +113,7 @@ const SigninPage = () => {
             className="google-signin-btn"
           >
             <img 
-              src="/google-icon.png" 
+              src="/assets/google.png" 
               alt="Google" 
               className="google-icon"
             />
