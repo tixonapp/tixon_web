@@ -1,78 +1,383 @@
 [
   {
-    "id": 1,
-    "eventName": "techfest2025",
-    "isAvailable": true,
-    "eventDate": "Sep 15, 2025",
-    "images": [
-      "https://picsum.photos/1000/300",
-      "https://picsum.photos/800/300"
-    ],
-    "location": "IIT Madras, Chennai, India",
-    "eventDescription": "A tech festival showcasing cutting-edge innovations and interactive sessions with tech industry leaders. Includes hackathons, workshops, and product demos.",
-    "organizer": "IIT Madras Technology Club",
-    "eventType": "Tech Festival",
-    "ticketPrice": "₹300",
-    "website": "https://techfest2025.iitm.ac.in",
-    "socialMedia": {
-      "facebook": "https://facebook.com/iitmadras",
-      "twitter": "https://twitter.com/iitmadras",
-      "instagram": "https://instagram.com/iitmadras"
-    },
-    "sponsors": [
-      "TechCorp",
-      "CodeX",
-      "Innovate Inc."
-    ],
-    "eventAgenda": [
-      {
-        "time": "9:00 AM",
-        "activity": "Inaugural Address"
-      },
-      {
-        "time": "10:00 AM",
-        "activity": "Hackathon Kickoff"
-      },
-      {
-        "time": "12:00 PM",
-        "activity": "Product Demos"
-      },
-      {
-        "time": "2:00 PM",
-        "activity": "Panel Discussion: The Future of AI"
-      },
-      {
-        "time": "4:00 PM",
-        "activity": "Closing Ceremony"
-      }
-    ],
-    "contactInfo": {
-      "email": "contact@techfest2025.iitm.ac.in",
-      "phone": "+91 9876543210"
-    }
-  },
-  {
-    "id": 2,
-    "eventName": "literatureFestival2025",
+    "id": 6,
+    "eventName": "artexhibition2025",
     "isAvailable": false,
-    "eventDate": "Oct 20, 2025",
+    "eventDate": "Nov 15, 2025",
     "images": [
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "location": "St. Xavier's College, Mumbai, India",
-    "eventDescription": "A celebration of literature, with a focus on contemporary writers, poetry readings, and discussions on the evolution of storytelling.",
-    "organizer": "St. Xavier's Literature Society",
-    "eventType": "Literature Festival",
-    "ticketPrice": "₹150",
-    "website": "https://literaturefest2025.sxcc.edu",
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9342",
+    "website": "https://artexhibition2025.srmuniversity.edu",
     "socialMedia": {
-      "facebook": "https://facebook.com/stxaviersmumbai",
-      "twitter": "https://twitter.com/stxaviersmumbai",
-      "instagram": "https://instagram.com/stxaviersmumbai"
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
     },
     "sponsors": [
-      "LiteratureWorks",
+      "CodeX",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.srmuniversity.edu",
+      "phone": "+91 8085751526"
+    }
+  },
+  {
+    "id": 7,
+    "eventName": "aiconference2025",
+    "isAvailable": false,
+    "eventDate": "Apr 07, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "A deep dive into AI, ML, and future technologies.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "AI Conference",
+    "ticketPrice": "\u20b9330",
+    "website": "https://aiconference2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
+      "CodeX",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@aiconference2025.iitbombay.edu",
+      "phone": "+91 8992331003"
+    }
+  },
+  {
+    "id": 8,
+    "eventName": "startupsummit2025",
+    "isAvailable": false,
+    "eventDate": "Jul 17, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "Networking with investors and entrepreneurs.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "Startup Summit",
+    "ticketPrice": "\u20b9454",
+    "website": "https://startupsummit2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
+      "BusinessInsider",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startupsummit2025.iitbombay.edu",
+      "phone": "+91 9968172976"
+    }
+  },
+  {
+    "id": 9,
+    "eventName": "artexhibition2025",
+    "isAvailable": false,
+    "eventDate": "Apr 11, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIM Bangalore, Bangalore, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "IIM Bangalore Management Club",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9266",
+    "website": "https://artexhibition2025.iimbangalore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iimbangalore",
+      "twitter": "https://twitter.com/iimbangalore",
+      "instagram": "https://instagram.com/iimbangalore"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.iimbangalore.edu",
+      "phone": "+91 7613964025"
+    }
+  },
+  {
+    "id": 10,
+    "eventName": "debatechampionship2025",
+    "isAvailable": true,
+    "eventDate": "Oct 15, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "NIT Trichy, Trichy, India",
+    "eventDescription": "Competitive debating on global issues.",
+    "organizer": "NIT Trichy Event Committee",
+    "eventType": "Debate Championship",
+    "ticketPrice": "\u20b9204",
+    "website": "https://debatechampionship2025.nittrichy.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/nittrichy",
+      "twitter": "https://twitter.com/nittrichy",
+      "instagram": "https://instagram.com/nittrichy"
+    },
+    "sponsors": [
+      "CodeX",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@debatechampionship2025.nittrichy.edu",
+      "phone": "+91 7116844709"
+    }
+  },
+  {
+    "id": 11,
+    "eventName": "sciencefair2025",
+    "isAvailable": true,
+    "eventDate": "Mar 27, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Hyderabad University, Hyderabad, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "Hyderabad University Literature Society",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9233",
+    "website": "https://sciencefair2025.hyderabaduniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/hyderabaduniversity",
+      "twitter": "https://twitter.com/hyderabaduniversity",
+      "instagram": "https://instagram.com/hyderabaduniversity"
+    },
+    "sponsors": [
+      "Startup India",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.hyderabaduniversity.edu",
+      "phone": "+91 7708855817"
+    }
+  },
+  {
+    "id": 12,
+    "eventName": "hackathon2025",
+    "isAvailable": true,
+    "eventDate": "Jul 16, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9283",
+    "website": "https://hackathon2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
+      "Startup India",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@hackathon2025.iitbombay.edu",
+      "phone": "+91 8295937049"
+    }
+  },
+  {
+    "id": 13,
+    "eventName": "aiconference2025",
+    "isAvailable": true,
+    "eventDate": "Oct 09, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIM Bangalore, Bangalore, India",
+    "eventDescription": "A deep dive into AI, ML, and future technologies.",
+    "organizer": "IIM Bangalore Management Club",
+    "eventType": "AI Conference",
+    "ticketPrice": "\u20b9175",
+    "website": "https://aiconference2025.iimbangalore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iimbangalore",
+      "twitter": "https://twitter.com/iimbangalore",
+      "instagram": "https://instagram.com/iimbangalore"
+    },
+    "sponsors": [
+      "TechCorp",
       "BookWorm Publishers"
     ],
     "eventAgenda": [
@@ -81,180 +386,3697 @@
         "activity": "Opening Ceremony"
       },
       {
-        "time": "11:00 AM",
-        "activity": "Poetry Reading Session"
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
       },
       {
-        "time": "1:00 PM",
-        "activity": "Panel Discussion: The Future of Literature"
+        "time": "2:00 PM",
+        "activity": "Networking Break"
       },
       {
-        "time": "3:00 PM",
-        "activity": "Book Launch: Emerging Voices"
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
       },
       {
         "time": "5:00 PM",
-        "activity": "Closing Ceremony"
+        "activity": "Closing Remarks"
       }
     ],
     "contactInfo": {
-      "email": "info@literaturefest2025.sxcc.edu",
-      "phone": "+91 9898765432"
+      "email": "contact@aiconference2025.iimbangalore.edu",
+      "phone": "+91 9477214933"
     }
   },
   {
-    "id": 3,
-    "eventName": "sportsDay2025",
-    "isAvailable": true,
-    "eventDate": "Nov 05, 2025",
+    "id": 14,
+    "eventName": "hackathon2025",
+    "isAvailable": false,
+    "eventDate": "Aug 28, 2025",
     "images": [
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "location": "Christ University, Bangalore, India",
-    "eventDescription": "A day full of competitive sports events, from athletics to team games, celebrating physical fitness and sportsmanship among students.",
-    "organizer": "Christ University Sports Club",
-    "eventType": "Sports Event",
-    "ticketPrice": "₹100",
-    "website": "https://sportsday2025.christuniversity.in",
+    "location": "Manipal University, Manipal, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "Manipal Cultural Forum",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9437",
+    "website": "https://hackathon2025.manipaluniversity.edu",
     "socialMedia": {
-      "facebook": "https://facebook.com/christuniversity",
-      "twitter": "https://twitter.com/christuniversity",
-      "instagram": "https://instagram.com/christuniversity"
+      "facebook": "https://facebook.com/manipaluniversity",
+      "twitter": "https://twitter.com/manipaluniversity",
+      "instagram": "https://instagram.com/manipaluniversity"
     },
     "sponsors": [
       "Nike",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@hackathon2025.manipaluniversity.edu",
+      "phone": "+91 7537496990"
+    }
+  },
+  {
+    "id": 15,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Apr 15, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9437",
+    "website": "https://gamingfest2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
+      "Adidas",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.iitbombay.edu",
+      "phone": "+91 8757233666"
+    }
+  },
+  {
+    "id": 16,
+    "eventName": "artexhibition2025",
+    "isAvailable": true,
+    "eventDate": "Sep 24, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "NIT Trichy, Trichy, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "NIT Trichy Event Committee",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9337",
+    "website": "https://artexhibition2025.nittrichy.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/nittrichy",
+      "twitter": "https://twitter.com/nittrichy",
+      "instagram": "https://instagram.com/nittrichy"
+    },
+    "sponsors": [
+      "Adidas",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.nittrichy.edu",
+      "phone": "+91 7775496895"
+    }
+  },
+  {
+    "id": 17,
+    "eventName": "artexhibition2025",
+    "isAvailable": true,
+    "eventDate": "Jul 08, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Hyderabad, Hyderabad, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "BITS Hyderabad Entrepreneurship Club",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9277",
+    "website": "https://artexhibition2025.bitshyderabad.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitshyderabad",
+      "twitter": "https://twitter.com/bitshyderabad",
+      "instagram": "https://instagram.com/bitshyderabad"
+    },
+    "sponsors": [
+      "BusinessInsider",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.bitshyderabad.edu",
+      "phone": "+91 8428014507"
+    }
+  },
+  {
+    "id": 18,
+    "eventName": "artexhibition2025",
+    "isAvailable": true,
+    "eventDate": "May 18, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Manipal University, Manipal, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "Manipal Cultural Forum",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9225",
+    "website": "https://artexhibition2025.manipaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/manipaluniversity",
+      "twitter": "https://twitter.com/manipaluniversity",
+      "instagram": "https://instagram.com/manipaluniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.manipaluniversity.edu",
+      "phone": "+91 7462849536"
+    }
+  },
+  {
+    "id": 19,
+    "eventName": "culturalfest2025",
+    "isAvailable": true,
+    "eventDate": "Aug 18, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "A celebration of dance, music, and drama.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Cultural Fest",
+    "ticketPrice": "\u20b9150",
+    "website": "https://culturalfest2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@culturalfest2025.vitvellore.edu",
+      "phone": "+91 8966506656"
+    }
+  },
+  {
+    "id": 20,
+    "eventName": "hackathon2025",
+    "isAvailable": true,
+    "eventDate": "Oct 13, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIM Bangalore, Bangalore, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "IIM Bangalore Management Club",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9310",
+    "website": "https://hackathon2025.iimbangalore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iimbangalore",
+      "twitter": "https://twitter.com/iimbangalore",
+      "instagram": "https://instagram.com/iimbangalore"
+    },
+    "sponsors": [
+      "Startup India",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@hackathon2025.iimbangalore.edu",
+      "phone": "+91 9877685700"
+    }
+  },
+  {
+    "id": 21,
+    "eventName": "startupsummit2025",
+    "isAvailable": false,
+    "eventDate": "May 23, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Delhi Technological University, Delhi, India",
+    "eventDescription": "Networking with investors and entrepreneurs.",
+    "organizer": "DTU Innovation Cell",
+    "eventType": "Startup Summit",
+    "ticketPrice": "\u20b9184",
+    "website": "https://startupsummit2025.delhitechnologicaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/delhitechnologicaluniversity",
+      "twitter": "https://twitter.com/delhitechnologicaluniversity",
+      "instagram": "https://instagram.com/delhitechnologicaluniversity"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startupsummit2025.delhitechnologicaluniversity.edu",
+      "phone": "+91 8961042935"
+    }
+  },
+  {
+    "id": 22,
+    "eventName": "startupsummit2025",
+    "isAvailable": true,
+    "eventDate": "Apr 04, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "Networking with investors and entrepreneurs.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Startup Summit",
+    "ticketPrice": "\u20b9262",
+    "website": "https://startupsummit2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "Startup India",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startupsummit2025.vitvellore.edu",
+      "phone": "+91 9778866265"
+    }
+  },
+  {
+    "id": 23,
+    "eventName": "artexhibition2025",
+    "isAvailable": true,
+    "eventDate": "Apr 08, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Delhi Technological University, Delhi, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "DTU Innovation Cell",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9165",
+    "website": "https://artexhibition2025.delhitechnologicaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/delhitechnologicaluniversity",
+      "twitter": "https://twitter.com/delhitechnologicaluniversity",
+      "instagram": "https://instagram.com/delhitechnologicaluniversity"
+    },
+    "sponsors": [
+      "TechCorp",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.delhitechnologicaluniversity.edu",
+      "phone": "+91 7611530495"
+    }
+  },
+  {
+    "id": 24,
+    "eventName": "sportsmeet2025",
+    "isAvailable": false,
+    "eventDate": "Jul 06, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Anna University, Chennai, India",
+    "eventDescription": "Athletics and team sports competitions.",
+    "organizer": "Anna University Sports Club",
+    "eventType": "Sports Meet",
+    "ticketPrice": "\u20b9369",
+    "website": "https://sportsmeet2025.annauniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/annauniversity",
+      "twitter": "https://twitter.com/annauniversity",
+      "instagram": "https://instagram.com/annauniversity"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sportsmeet2025.annauniversity.edu",
+      "phone": "+91 9388323188"
+    }
+  },
+  {
+    "id": 25,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Nov 09, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Hyderabad University, Hyderabad, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "Hyderabad University Literature Society",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9120",
+    "website": "https://gamingfest2025.hyderabaduniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/hyderabaduniversity",
+      "twitter": "https://twitter.com/hyderabaduniversity",
+      "instagram": "https://instagram.com/hyderabaduniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.hyderabaduniversity.edu",
+      "phone": "+91 7668456684"
+    }
+  },
+  {
+    "id": 26,
+    "eventName": "hackathon2025",
+    "isAvailable": true,
+    "eventDate": "Dec 24, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Anna University, Chennai, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "Anna University Sports Club",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9261",
+    "website": "https://hackathon2025.annauniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/annauniversity",
+      "twitter": "https://twitter.com/annauniversity",
+      "instagram": "https://instagram.com/annauniversity"
+    },
+    "sponsors": [
+      "BusinessInsider",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@hackathon2025.annauniversity.edu",
+      "phone": "+91 9602379163"
+    }
+  },
+  {
+    "id": 27,
+    "eventName": "gamingfest2025",
+    "isAvailable": true,
+    "eventDate": "May 31, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Manipal University, Manipal, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "Manipal Cultural Forum",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9341",
+    "website": "https://gamingfest2025.manipaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/manipaluniversity",
+      "twitter": "https://twitter.com/manipaluniversity",
+      "instagram": "https://instagram.com/manipaluniversity"
+    },
+    "sponsors": [
+      "Startup India",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.manipaluniversity.edu",
+      "phone": "+91 8018496800"
+    }
+  },
+  {
+    "id": 28,
+    "eventName": "aiconference2025",
+    "isAvailable": true,
+    "eventDate": "Oct 06, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Hyderabad University, Hyderabad, India",
+    "eventDescription": "A deep dive into AI, ML, and future technologies.",
+    "organizer": "Hyderabad University Literature Society",
+    "eventType": "AI Conference",
+    "ticketPrice": "\u20b9306",
+    "website": "https://aiconference2025.hyderabaduniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/hyderabaduniversity",
+      "twitter": "https://twitter.com/hyderabaduniversity",
+      "instagram": "https://instagram.com/hyderabaduniversity"
+    },
+    "sponsors": [
+      "CodeX",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@aiconference2025.hyderabaduniversity.edu",
+      "phone": "+91 9507790421"
+    }
+  },
+  {
+    "id": 29,
+    "eventName": "sportsmeet2025",
+    "isAvailable": true,
+    "eventDate": "Jul 10, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "Athletics and team sports competitions.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Sports Meet",
+    "ticketPrice": "\u20b9193",
+    "website": "https://sportsmeet2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "TechCorp",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sportsmeet2025.vitvellore.edu",
+      "phone": "+91 8703728932"
+    }
+  },
+  {
+    "id": 30,
+    "eventName": "musicfest2025",
+    "isAvailable": false,
+    "eventDate": "Aug 12, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Delhi Technological University, Delhi, India",
+    "eventDescription": "Live music, DJ nights, and band performances.",
+    "organizer": "DTU Innovation Cell",
+    "eventType": "Music Fest",
+    "ticketPrice": "\u20b9119",
+    "website": "https://musicfest2025.delhitechnologicaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/delhitechnologicaluniversity",
+      "twitter": "https://twitter.com/delhitechnologicaluniversity",
+      "instagram": "https://instagram.com/delhitechnologicaluniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@musicfest2025.delhitechnologicaluniversity.edu",
+      "phone": "+91 7671367724"
+    }
+  },
+  {
+    "id": 31,
+    "eventName": "hackathon2025",
+    "isAvailable": false,
+    "eventDate": "Mar 13, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9470",
+    "website": "https://hackathon2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@hackathon2025.vitvellore.edu",
+      "phone": "+91 8410984553"
+    }
+  },
+  {
+    "id": 32,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Aug 27, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Hyderabad University, Hyderabad, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "Hyderabad University Literature Society",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9146",
+    "website": "https://gamingfest2025.hyderabaduniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/hyderabaduniversity",
+      "twitter": "https://twitter.com/hyderabaduniversity",
+      "instagram": "https://instagram.com/hyderabaduniversity"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.hyderabaduniversity.edu",
+      "phone": "+91 8133952206"
+    }
+  },
+  {
+    "id": 33,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Oct 23, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9329",
+    "website": "https://gamingfest2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "BusinessInsider",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.srmuniversity.edu",
+      "phone": "+91 9347296815"
+    }
+  },
+  {
+    "id": 34,
+    "eventName": "culturalfest2025",
+    "isAvailable": false,
+    "eventDate": "Jun 20, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "NIT Trichy, Trichy, India",
+    "eventDescription": "A celebration of dance, music, and drama.",
+    "organizer": "NIT Trichy Event Committee",
+    "eventType": "Cultural Fest",
+    "ticketPrice": "\u20b9172",
+    "website": "https://culturalfest2025.nittrichy.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/nittrichy",
+      "twitter": "https://twitter.com/nittrichy",
+      "instagram": "https://instagram.com/nittrichy"
+    },
+    "sponsors": [
+      "TechCorp",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@culturalfest2025.nittrichy.edu",
+      "phone": "+91 7819780681"
+    }
+  },
+  {
+    "id": 35,
+    "eventName": "hackathon2025",
+    "isAvailable": true,
+    "eventDate": "Apr 04, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9156",
+    "website": "https://hackathon2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
       "Adidas",
       "Decathlon"
     ],
     "eventAgenda": [
       {
-        "time": "8:00 AM",
+        "time": "10:00 AM",
         "activity": "Opening Ceremony"
       },
       {
-        "time": "9:00 AM",
-        "activity": "Track & Field Events"
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
       },
       {
-        "time": "12:00 PM",
-        "activity": "Team Sports: Football & Basketball"
+        "time": "2:00 PM",
+        "activity": "Networking Break"
       },
       {
-        "time": "3:00 PM",
-        "activity": "Fun Games & Activities"
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
       },
       {
         "time": "5:00 PM",
-        "activity": "Closing Ceremony & Prize Distribution"
+        "activity": "Closing Remarks"
       }
     ],
     "contactInfo": {
-      "email": "sports@christuniversity.in",
-      "phone": "+91 8765432109"
+      "email": "contact@hackathon2025.iitbombay.edu",
+      "phone": "+91 8611160281"
     }
   },
   {
-    "id": 4,
-    "eventName": "startupPitch2025",
+    "id": 36,
+    "eventName": "sportsmeet2025",
+    "isAvailable": false,
+    "eventDate": "May 31, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Anna University, Chennai, India",
+    "eventDescription": "Athletics and team sports competitions.",
+    "organizer": "Anna University Sports Club",
+    "eventType": "Sports Meet",
+    "ticketPrice": "\u20b9298",
+    "website": "https://sportsmeet2025.annauniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/annauniversity",
+      "twitter": "https://twitter.com/annauniversity",
+      "instagram": "https://instagram.com/annauniversity"
+    },
+    "sponsors": [
+      "TechCorp",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sportsmeet2025.annauniversity.edu",
+      "phone": "+91 8995387325"
+    }
+  },
+  {
+    "id": 37,
+    "eventName": "gamingfest2025",
     "isAvailable": true,
+    "eventDate": "May 16, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9462",
+    "website": "https://gamingfest2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "Startup India",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.vitvellore.edu",
+      "phone": "+91 8492182137"
+    }
+  },
+  {
+    "id": 38,
+    "eventName": "aiconference2025",
+    "isAvailable": false,
+    "eventDate": "Nov 17, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Anna University, Chennai, India",
+    "eventDescription": "A deep dive into AI, ML, and future technologies.",
+    "organizer": "Anna University Sports Club",
+    "eventType": "AI Conference",
+    "ticketPrice": "\u20b9169",
+    "website": "https://aiconference2025.annauniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/annauniversity",
+      "twitter": "https://twitter.com/annauniversity",
+      "instagram": "https://instagram.com/annauniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@aiconference2025.annauniversity.edu",
+      "phone": "+91 9697483153"
+    }
+  },
+  {
+    "id": 39,
+    "eventName": "startupsummit2025",
+    "isAvailable": false,
+    "eventDate": "Oct 24, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "Networking with investors and entrepreneurs.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "Startup Summit",
+    "ticketPrice": "\u20b9318",
+    "website": "https://startupsummit2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
+      "TechCorp",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startupsummit2025.iitbombay.edu",
+      "phone": "+91 9507524871"
+    }
+  },
+  {
+    "id": 40,
+    "eventName": "culturalfest2025",
+    "isAvailable": true,
+    "eventDate": "Apr 20, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "A celebration of dance, music, and drama.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Cultural Fest",
+    "ticketPrice": "\u20b9186",
+    "website": "https://culturalfest2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "BusinessInsider",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@culturalfest2025.vitvellore.edu",
+      "phone": "+91 7616513098"
+    }
+  },
+  {
+    "id": 41,
+    "eventName": "debatechampionship2025",
+    "isAvailable": true,
+    "eventDate": "Jun 20, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Hyderabad University, Hyderabad, India",
+    "eventDescription": "Competitive debating on global issues.",
+    "organizer": "Hyderabad University Literature Society",
+    "eventType": "Debate Championship",
+    "ticketPrice": "\u20b9476",
+    "website": "https://debatechampionship2025.hyderabaduniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/hyderabaduniversity",
+      "twitter": "https://twitter.com/hyderabaduniversity",
+      "instagram": "https://instagram.com/hyderabaduniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@debatechampionship2025.hyderabaduniversity.edu",
+      "phone": "+91 7434662951"
+    }
+  },
+  {
+    "id": 42,
+    "eventName": "culturalfest2025",
+    "isAvailable": false,
+    "eventDate": "Mar 20, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIM Bangalore, Bangalore, India",
+    "eventDescription": "A celebration of dance, music, and drama.",
+    "organizer": "IIM Bangalore Management Club",
+    "eventType": "Cultural Fest",
+    "ticketPrice": "\u20b9227",
+    "website": "https://culturalfest2025.iimbangalore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iimbangalore",
+      "twitter": "https://twitter.com/iimbangalore",
+      "instagram": "https://instagram.com/iimbangalore"
+    },
+    "sponsors": [
+      "Adidas",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@culturalfest2025.iimbangalore.edu",
+      "phone": "+91 8719827417"
+    }
+  },
+  {
+    "id": 43,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Jul 03, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9140",
+    "website": "https://gamingfest2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "CodeX",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.vitvellore.edu",
+      "phone": "+91 9258998418"
+    }
+  },
+  {
+    "id": 44,
+    "eventName": "sportsmeet2025",
+    "isAvailable": true,
+    "eventDate": "Dec 07, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "Athletics and team sports competitions.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Sports Meet",
+    "ticketPrice": "\u20b9283",
+    "website": "https://sportsmeet2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "CodeX",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sportsmeet2025.vitvellore.edu",
+      "phone": "+91 7612867486"
+    }
+  },
+  {
+    "id": 45,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "May 08, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9403",
+    "website": "https://gamingfest2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.vitvellore.edu",
+      "phone": "+91 8875294972"
+    }
+  },
+  {
+    "id": 46,
+    "eventName": "startupsummit2025",
+    "isAvailable": false,
+    "eventDate": "Apr 12, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "NIT Trichy, Trichy, India",
+    "eventDescription": "Networking with investors and entrepreneurs.",
+    "organizer": "NIT Trichy Event Committee",
+    "eventType": "Startup Summit",
+    "ticketPrice": "\u20b9392",
+    "website": "https://startupsummit2025.nittrichy.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/nittrichy",
+      "twitter": "https://twitter.com/nittrichy",
+      "instagram": "https://instagram.com/nittrichy"
+    },
+    "sponsors": [
+      "BusinessInsider",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startupsummit2025.nittrichy.edu",
+      "phone": "+91 9924347856"
+    }
+  },
+  {
+    "id": 47,
+    "eventName": "startupsummit2025",
+    "isAvailable": true,
+    "eventDate": "Mar 28, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "Networking with investors and entrepreneurs.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "Startup Summit",
+    "ticketPrice": "\u20b9153",
+    "website": "https://startupsummit2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
+      "CodeX",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startupsummit2025.iitbombay.edu",
+      "phone": "+91 8711265479"
+    }
+  },
+  {
+    "id": 48,
+    "eventName": "hackathon2025",
+    "isAvailable": true,
+    "eventDate": "May 15, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "NIT Trichy, Trichy, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "NIT Trichy Event Committee",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9183",
+    "website": "https://hackathon2025.nittrichy.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/nittrichy",
+      "twitter": "https://twitter.com/nittrichy",
+      "instagram": "https://instagram.com/nittrichy"
+    },
+    "sponsors": [
+      "TechCorp",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@hackathon2025.nittrichy.edu",
+      "phone": "+91 7419255420"
+    }
+  },
+  {
+    "id": 49,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Jul 10, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Hyderabad, Hyderabad, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "BITS Hyderabad Entrepreneurship Club",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9129",
+    "website": "https://gamingfest2025.bitshyderabad.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitshyderabad",
+      "twitter": "https://twitter.com/bitshyderabad",
+      "instagram": "https://instagram.com/bitshyderabad"
+    },
+    "sponsors": [
+      "CodeX",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.bitshyderabad.edu",
+      "phone": "+91 7340462746"
+    }
+  },
+  {
+    "id": 50,
+    "eventName": "aiconference2025",
+    "isAvailable": false,
+    "eventDate": "May 18, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "A deep dive into AI, ML, and future technologies.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "AI Conference",
+    "ticketPrice": "\u20b9320",
+    "website": "https://aiconference2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
+      "Startup India",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@aiconference2025.iitbombay.edu",
+      "phone": "+91 9369832470"
+    }
+  },
+  {
+    "id": 51,
+    "eventName": "sportsmeet2025",
+    "isAvailable": true,
+    "eventDate": "Jul 09, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "Athletics and team sports competitions.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Sports Meet",
+    "ticketPrice": "\u20b9146",
+    "website": "https://sportsmeet2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "Adidas",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sportsmeet2025.vitvellore.edu",
+      "phone": "+91 9909474356"
+    }
+  },
+  {
+    "id": 52,
+    "eventName": "artexhibition2025",
+    "isAvailable": false,
+    "eventDate": "Aug 23, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Anna University, Chennai, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "Anna University Sports Club",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9271",
+    "website": "https://artexhibition2025.annauniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/annauniversity",
+      "twitter": "https://twitter.com/annauniversity",
+      "instagram": "https://instagram.com/annauniversity"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.annauniversity.edu",
+      "phone": "+91 9570413427"
+    }
+  },
+  {
+    "id": 53,
+    "eventName": "sciencefair2025",
+    "isAvailable": true,
+    "eventDate": "Aug 31, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9225",
+    "website": "https://sciencefair2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "TechCorp",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.srmuniversity.edu",
+      "phone": "+91 8204209337"
+    }
+  },
+  {
+    "id": 54,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Sep 28, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Hyderabad, Hyderabad, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "BITS Hyderabad Entrepreneurship Club",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9306",
+    "website": "https://gamingfest2025.bitshyderabad.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitshyderabad",
+      "twitter": "https://twitter.com/bitshyderabad",
+      "instagram": "https://instagram.com/bitshyderabad"
+    },
+    "sponsors": [
+      "TechCorp",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.bitshyderabad.edu",
+      "phone": "+91 8555891513"
+    }
+  },
+  {
+    "id": 55,
+    "eventName": "debatechampionship2025",
+    "isAvailable": false,
+    "eventDate": "May 13, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Hyderabad, Hyderabad, India",
+    "eventDescription": "Competitive debating on global issues.",
+    "organizer": "BITS Hyderabad Entrepreneurship Club",
+    "eventType": "Debate Championship",
+    "ticketPrice": "\u20b9476",
+    "website": "https://debatechampionship2025.bitshyderabad.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitshyderabad",
+      "twitter": "https://twitter.com/bitshyderabad",
+      "instagram": "https://instagram.com/bitshyderabad"
+    },
+    "sponsors": [
+      "TechCorp",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@debatechampionship2025.bitshyderabad.edu",
+      "phone": "+91 9834702491"
+    }
+  },
+  {
+    "id": 56,
+    "eventName": "sciencefair2025",
+    "isAvailable": true,
+    "eventDate": "Sep 19, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIT Bombay, Mumbai, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "IIT Bombay Tech Club",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9484",
+    "website": "https://sciencefair2025.iitbombay.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iitbombay",
+      "twitter": "https://twitter.com/iitbombay",
+      "instagram": "https://instagram.com/iitbombay"
+    },
+    "sponsors": [
+      "CodeX",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.iitbombay.edu",
+      "phone": "+91 7777322479"
+    }
+  },
+  {
+    "id": 57,
+    "eventName": "sciencefair2025",
+    "isAvailable": true,
+    "eventDate": "Aug 16, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIM Bangalore, Bangalore, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "IIM Bangalore Management Club",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9289",
+    "website": "https://sciencefair2025.iimbangalore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iimbangalore",
+      "twitter": "https://twitter.com/iimbangalore",
+      "instagram": "https://instagram.com/iimbangalore"
+    },
+    "sponsors": [
+      "Adidas",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.iimbangalore.edu",
+      "phone": "+91 8191672455"
+    }
+  },
+  {
+    "id": 58,
+    "eventName": "aiconference2025",
+    "isAvailable": true,
+    "eventDate": "Jun 03, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Delhi Technological University, Delhi, India",
+    "eventDescription": "A deep dive into AI, ML, and future technologies.",
+    "organizer": "DTU Innovation Cell",
+    "eventType": "AI Conference",
+    "ticketPrice": "\u20b9297",
+    "website": "https://aiconference2025.delhitechnologicaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/delhitechnologicaluniversity",
+      "twitter": "https://twitter.com/delhitechnologicaluniversity",
+      "instagram": "https://instagram.com/delhitechnologicaluniversity"
+    },
+    "sponsors": [
+      "TechCorp",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@aiconference2025.delhitechnologicaluniversity.edu",
+      "phone": "+91 9950267660"
+    }
+  },
+  {
+    "id": 59,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Jun 30, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Delhi Technological University, Delhi, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "DTU Innovation Cell",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9108",
+    "website": "https://gamingfest2025.delhitechnologicaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/delhitechnologicaluniversity",
+      "twitter": "https://twitter.com/delhitechnologicaluniversity",
+      "instagram": "https://instagram.com/delhitechnologicaluniversity"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.delhitechnologicaluniversity.edu",
+      "phone": "+91 7558884343"
+    }
+  },
+  {
+    "id": 60,
+    "eventName": "musicfest2025",
+    "isAvailable": false,
+    "eventDate": "Apr 08, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Live music, DJ nights, and band performances.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Music Fest",
+    "ticketPrice": "\u20b9461",
+    "website": "https://musicfest2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@musicfest2025.srmuniversity.edu",
+      "phone": "+91 9113961323"
+    }
+  },
+  {
+    "id": 61,
+    "eventName": "artexhibition2025",
+    "isAvailable": false,
+    "eventDate": "Oct 30, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9411",
+    "website": "https://artexhibition2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "TechCorp",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.srmuniversity.edu",
+      "phone": "+91 7416179349"
+    }
+  },
+  {
+    "id": 62,
+    "eventName": "debatechampionship2025",
+    "isAvailable": true,
+    "eventDate": "Apr 27, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Hyderabad University, Hyderabad, India",
+    "eventDescription": "Competitive debating on global issues.",
+    "organizer": "Hyderabad University Literature Society",
+    "eventType": "Debate Championship",
+    "ticketPrice": "\u20b9287",
+    "website": "https://debatechampionship2025.hyderabaduniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/hyderabaduniversity",
+      "twitter": "https://twitter.com/hyderabaduniversity",
+      "instagram": "https://instagram.com/hyderabaduniversity"
+    },
+    "sponsors": [
+      "TechCorp",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@debatechampionship2025.hyderabaduniversity.edu",
+      "phone": "+91 8681766185"
+    }
+  },
+  {
+    "id": 63,
+    "eventName": "sciencefair2025",
+    "isAvailable": false,
+    "eventDate": "Apr 22, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9399",
+    "website": "https://sciencefair2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "Adidas",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.srmuniversity.edu",
+      "phone": "+91 7024055857"
+    }
+  },
+  {
+    "id": 64,
+    "eventName": "sciencefair2025",
+    "isAvailable": true,
+    "eventDate": "Dec 01, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9474",
+    "website": "https://sciencefair2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.srmuniversity.edu",
+      "phone": "+91 9590265722"
+    }
+  },
+  {
+    "id": 65,
+    "eventName": "sciencefair2025",
+    "isAvailable": false,
+    "eventDate": "Apr 29, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9193",
+    "website": "https://sciencefair2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "Adidas",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.srmuniversity.edu",
+      "phone": "+91 8408346095"
+    }
+  },
+  {
+    "id": 66,
+    "eventName": "startupsummit2025",
+    "isAvailable": false,
+    "eventDate": "Mar 22, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "IIM Bangalore, Bangalore, India",
+    "eventDescription": "Networking with investors and entrepreneurs.",
+    "organizer": "IIM Bangalore Management Club",
+    "eventType": "Startup Summit",
+    "ticketPrice": "\u20b9379",
+    "website": "https://startupsummit2025.iimbangalore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/iimbangalore",
+      "twitter": "https://twitter.com/iimbangalore",
+      "instagram": "https://instagram.com/iimbangalore"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startupsummit2025.iimbangalore.edu",
+      "phone": "+91 7307852274"
+    }
+  },
+  {
+    "id": 67,
+    "eventName": "sportsmeet2025",
+    "isAvailable": false,
+    "eventDate": "Dec 12, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Delhi Technological University, Delhi, India",
+    "eventDescription": "Athletics and team sports competitions.",
+    "organizer": "DTU Innovation Cell",
+    "eventType": "Sports Meet",
+    "ticketPrice": "\u20b9109",
+    "website": "https://sportsmeet2025.delhitechnologicaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/delhitechnologicaluniversity",
+      "twitter": "https://twitter.com/delhitechnologicaluniversity",
+      "instagram": "https://instagram.com/delhitechnologicaluniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sportsmeet2025.delhitechnologicaluniversity.edu",
+      "phone": "+91 8249280667"
+    }
+  },
+  {
+    "id": 68,
+    "eventName": "hackathon2025",
+    "isAvailable": false,
+    "eventDate": "Apr 11, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Hyderabad University, Hyderabad, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "Hyderabad University Literature Society",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9389",
+    "website": "https://hackathon2025.hyderabaduniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/hyderabaduniversity",
+      "twitter": "https://twitter.com/hyderabaduniversity",
+      "instagram": "https://instagram.com/hyderabaduniversity"
+    },
+    "sponsors": [
+      "Startup India",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@hackathon2025.hyderabaduniversity.edu",
+      "phone": "+91 9399451115"
+    }
+  },
+  {
+    "id": 69,
+    "eventName": "artexhibition2025",
+    "isAvailable": true,
+    "eventDate": "Apr 02, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Hyderabad, Hyderabad, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "BITS Hyderabad Entrepreneurship Club",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9378",
+    "website": "https://artexhibition2025.bitshyderabad.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitshyderabad",
+      "twitter": "https://twitter.com/bitshyderabad",
+      "instagram": "https://instagram.com/bitshyderabad"
+    },
+    "sponsors": [
+      "TechCorp",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.bitshyderabad.edu",
+      "phone": "+91 7556849384"
+    }
+  },
+  {
+    "id": 70,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Jun 22, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "NIT Trichy, Trichy, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "NIT Trichy Event Committee",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9289",
+    "website": "https://gamingfest2025.nittrichy.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/nittrichy",
+      "twitter": "https://twitter.com/nittrichy",
+      "instagram": "https://instagram.com/nittrichy"
+    },
+    "sponsors": [
+      "TechCorp",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.nittrichy.edu",
+      "phone": "+91 7841062487"
+    }
+  },
+  {
+    "id": 71,
+    "eventName": "culturalfest2025",
+    "isAvailable": false,
+    "eventDate": "Jun 01, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "VIT Vellore, Vellore, India",
+    "eventDescription": "A celebration of dance, music, and drama.",
+    "organizer": "VIT Cultural Society",
+    "eventType": "Cultural Fest",
+    "ticketPrice": "\u20b9380",
+    "website": "https://culturalfest2025.vitvellore.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/vitvellore",
+      "twitter": "https://twitter.com/vitvellore",
+      "instagram": "https://instagram.com/vitvellore"
+    },
+    "sponsors": [
+      "Nike",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@culturalfest2025.vitvellore.edu",
+      "phone": "+91 9639060748"
+    }
+  },
+  {
+    "id": 72,
+    "eventName": "sciencefair2025",
+    "isAvailable": true,
+    "eventDate": "Jul 29, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9382",
+    "website": "https://sciencefair2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.srmuniversity.edu",
+      "phone": "+91 9684894905"
+    }
+  },
+  {
+    "id": 73,
+    "eventName": "debatechampionship2025",
+    "isAvailable": false,
+    "eventDate": "Mar 21, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "NIT Trichy, Trichy, India",
+    "eventDescription": "Competitive debating on global issues.",
+    "organizer": "NIT Trichy Event Committee",
+    "eventType": "Debate Championship",
+    "ticketPrice": "\u20b9217",
+    "website": "https://debatechampionship2025.nittrichy.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/nittrichy",
+      "twitter": "https://twitter.com/nittrichy",
+      "instagram": "https://instagram.com/nittrichy"
+    },
+    "sponsors": [
+      "Startup India",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@debatechampionship2025.nittrichy.edu",
+      "phone": "+91 9774420956"
+    }
+  },
+  {
+    "id": 74,
+    "eventName": "sciencefair2025",
+    "isAvailable": true,
+    "eventDate": "Jun 04, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Delhi Technological University, Delhi, India",
+    "eventDescription": "Innovative projects and experiments.",
+    "organizer": "DTU Innovation Cell",
+    "eventType": "Science Fair",
+    "ticketPrice": "\u20b9390",
+    "website": "https://sciencefair2025.delhitechnologicaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/delhitechnologicaluniversity",
+      "twitter": "https://twitter.com/delhitechnologicaluniversity",
+      "instagram": "https://instagram.com/delhitechnologicaluniversity"
+    },
+    "sponsors": [
+      "BusinessInsider",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@sciencefair2025.delhitechnologicaluniversity.edu",
+      "phone": "+91 9002653056"
+    }
+  },
+  {
+    "id": 75,
+    "eventName": "gamingfest2025",
+    "isAvailable": true,
+    "eventDate": "Oct 23, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Hyderabad, Hyderabad, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "BITS Hyderabad Entrepreneurship Club",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9185",
+    "website": "https://gamingfest2025.bitshyderabad.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitshyderabad",
+      "twitter": "https://twitter.com/bitshyderabad",
+      "instagram": "https://instagram.com/bitshyderabad"
+    },
+    "sponsors": [
+      "Startup India",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.bitshyderabad.edu",
+      "phone": "+91 9924247439"
+    }
+  },
+  {
+    "id": 76,
+    "eventName": "startupsummit2025",
+    "isAvailable": true,
+    "eventDate": "Aug 06, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Anna University, Chennai, India",
+    "eventDescription": "Networking with investors and entrepreneurs.",
+    "organizer": "Anna University Sports Club",
+    "eventType": "Startup Summit",
+    "ticketPrice": "\u20b9236",
+    "website": "https://startupsummit2025.annauniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/annauniversity",
+      "twitter": "https://twitter.com/annauniversity",
+      "instagram": "https://instagram.com/annauniversity"
+    },
+    "sponsors": [
+      "Adidas",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@startupsummit2025.annauniversity.edu",
+      "phone": "+91 9748221274"
+    }
+  },
+  {
+    "id": 77,
+    "eventName": "culturalfest2025",
+    "isAvailable": false,
+    "eventDate": "Dec 02, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "A celebration of dance, music, and drama.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Cultural Fest",
+    "ticketPrice": "\u20b9317",
+    "website": "https://culturalfest2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@culturalfest2025.srmuniversity.edu",
+      "phone": "+91 9012628038"
+    }
+  },
+  {
+    "id": 78,
+    "eventName": "hackathon2025",
+    "isAvailable": false,
     "eventDate": "Dec 10, 2025",
     "images": [
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "location": "BITS Pilani, Goa, India",
-    "eventDescription": "An entrepreneurial event where students pitch their startup ideas to investors and industry experts. Includes workshops, networking, and mentoring.",
-    "organizer": "BITS Pilani Entrepreneurship Club",
-    "eventType": "Startup Event",
-    "ticketPrice": "₹500",
-    "website": "https://startuppitch2025.bitsgoa.edu",
+    "location": "IIM Bangalore, Bangalore, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "IIM Bangalore Management Club",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9354",
+    "website": "https://hackathon2025.iimbangalore.edu",
     "socialMedia": {
-      "facebook": "https://facebook.com/bitsgoa",
-      "twitter": "https://twitter.com/bitsgoa",
-      "instagram": "https://instagram.com/bitsgoa"
+      "facebook": "https://facebook.com/iimbangalore",
+      "twitter": "https://twitter.com/iimbangalore",
+      "instagram": "https://instagram.com/iimbangalore"
     },
     "sponsors": [
       "Startup India",
-      "TechCrunch",
-      "BusinessInsider"
-    ],
-    "eventAgenda": [
-      {
-        "time": "9:00 AM",
-        "activity": "Inaugural Session"
-      },
-      {
-        "time": "10:00 AM",
-        "activity": "Pitching Round 1"
-      },
-      {
-        "time": "12:00 PM",
-        "activity": "Startup Mentorship Session"
-      },
-      {
-        "time": "2:00 PM",
-        "activity": "Pitching Round 2"
-      },
-      {
-        "time": "4:00 PM",
-        "activity": "Networking and Closing Ceremony"
-      }
-    ],
-    "contactInfo": {
-      "email": "contact@startuppitch2025.bitsgoa.edu",
-      "phone": "+91 9876543212"
-    }
-  },
-  {
-    "id": 5,
-    "eventName": "culturalNight2025",
-    "isAvailable": false,
-    "eventDate": "Jan 15, 2026",
-    "images": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
-    ],
-    "location": "University of Delhi, Delhi, India",
-    "eventDescription": "A vibrant evening celebrating various cultural performances, including music, dance, and drama. A chance for students to showcase their artistic talents.",
-    "organizer": "University of Delhi Cultural Society",
-    "eventType": "Cultural Event",
-    "ticketPrice": "₹200",
-    "website": "https://culturalnight2025.du.ac.in",
-    "socialMedia": {
-      "facebook": "https://facebook.com/universityofdelhi",
-      "twitter": "https://twitter.com/universityofdelhi",
-      "instagram": "https://instagram.com/universityofdelhi"
-    },
-    "sponsors": [
-      "Cultural Arts Foundation",
       "MusicWorld"
     ],
     "eventAgenda": [
       {
-        "time": "6:00 PM",
-        "activity": "Opening Performance: Traditional Dance"
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
       },
       {
-        "time": "7:00 PM",
-        "activity": "Live Music Concert"
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
       },
       {
-        "time": "8:00 PM",
-        "activity": "Drama & Theatrical Performance"
+        "time": "2:00 PM",
+        "activity": "Networking Break"
       },
       {
-        "time": "9:00 PM",
-        "activity": "Dance Flash Mob"
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
       },
       {
-        "time": "10:00 PM",
-        "activity": "Closing Performance"
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
       }
     ],
     "contactInfo": {
-      "email": "cultural@du.ac.in",
-      "phone": "+91 1234567890"
+      "email": "contact@hackathon2025.iimbangalore.edu",
+      "phone": "+91 7659477180"
+    }
+  },
+  {
+    "id": 79,
+    "eventName": "gamingfest2025",
+    "isAvailable": false,
+    "eventDate": "Aug 04, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Hyderabad University, Hyderabad, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "Hyderabad University Literature Society",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9389",
+    "website": "https://gamingfest2025.hyderabaduniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/hyderabaduniversity",
+      "twitter": "https://twitter.com/hyderabaduniversity",
+      "instagram": "https://instagram.com/hyderabaduniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.hyderabaduniversity.edu",
+      "phone": "+91 7892202634"
+    }
+  },
+  {
+    "id": 80,
+    "eventName": "aiconference2025",
+    "isAvailable": false,
+    "eventDate": "Jun 04, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Hyderabad, Hyderabad, India",
+    "eventDescription": "A deep dive into AI, ML, and future technologies.",
+    "organizer": "BITS Hyderabad Entrepreneurship Club",
+    "eventType": "AI Conference",
+    "ticketPrice": "\u20b9286",
+    "website": "https://aiconference2025.bitshyderabad.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitshyderabad",
+      "twitter": "https://twitter.com/bitshyderabad",
+      "instagram": "https://instagram.com/bitshyderabad"
+    },
+    "sponsors": [
+      "TechCorp",
+      "MusicWorld"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@aiconference2025.bitshyderabad.edu",
+      "phone": "+91 8707838139"
+    }
+  },
+  {
+    "id": 81,
+    "eventName": "hackathon2025",
+    "isAvailable": true,
+    "eventDate": "Jul 08, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Anna University, Chennai, India",
+    "eventDescription": "24-hour coding competition for tech enthusiasts.",
+    "organizer": "Anna University Sports Club",
+    "eventType": "Hackathon",
+    "ticketPrice": "\u20b9228",
+    "website": "https://hackathon2025.annauniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/annauniversity",
+      "twitter": "https://twitter.com/annauniversity",
+      "instagram": "https://instagram.com/annauniversity"
+    },
+    "sponsors": [
+      "Startup India",
+      "Cultural Arts Foundation"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@hackathon2025.annauniversity.edu",
+      "phone": "+91 8371472368"
+    }
+  },
+  {
+    "id": 82,
+    "eventName": "artexhibition2025",
+    "isAvailable": false,
+    "eventDate": "Sep 24, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Manipal University, Manipal, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "Manipal Cultural Forum",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9262",
+    "website": "https://artexhibition2025.manipaluniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/manipaluniversity",
+      "twitter": "https://twitter.com/manipaluniversity",
+      "instagram": "https://instagram.com/manipaluniversity"
+    },
+    "sponsors": [
+      "CodeX",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.manipaluniversity.edu",
+      "phone": "+91 8483949702"
+    }
+  },
+  {
+    "id": 83,
+    "eventName": "artexhibition2025",
+    "isAvailable": true,
+    "eventDate": "Sep 29, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "SRM University, Chennai, India",
+    "eventDescription": "Showcasing contemporary and traditional art.",
+    "organizer": "SRM Tech Fest Organizers",
+    "eventType": "Art Exhibition",
+    "ticketPrice": "\u20b9423",
+    "website": "https://artexhibition2025.srmuniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/srmuniversity",
+      "twitter": "https://twitter.com/srmuniversity",
+      "instagram": "https://instagram.com/srmuniversity"
+    },
+    "sponsors": [
+      "Nike",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@artexhibition2025.srmuniversity.edu",
+      "phone": "+91 7626404304"
+    }
+  },
+  {
+    "id": 84,
+    "eventName": "aiconference2025",
+    "isAvailable": true,
+    "eventDate": "May 30, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "BITS Hyderabad, Hyderabad, India",
+    "eventDescription": "A deep dive into AI, ML, and future technologies.",
+    "organizer": "BITS Hyderabad Entrepreneurship Club",
+    "eventType": "AI Conference",
+    "ticketPrice": "\u20b9463",
+    "website": "https://aiconference2025.bitshyderabad.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/bitshyderabad",
+      "twitter": "https://twitter.com/bitshyderabad",
+      "instagram": "https://instagram.com/bitshyderabad"
+    },
+    "sponsors": [
+      "Innovate Inc.",
+      "Decathlon"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@aiconference2025.bitshyderabad.edu",
+      "phone": "+91 7749215870"
+    }
+  },
+  {
+    "id": 85,
+    "eventName": "gamingfest2025",
+    "isAvailable": true,
+    "eventDate": "Aug 19, 2025",
+    "images": [
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
+    ],
+    "location": "Anna University, Chennai, India",
+    "eventDescription": "E-sports tournaments and gaming workshops.",
+    "organizer": "Anna University Sports Club",
+    "eventType": "Gaming Fest",
+    "ticketPrice": "\u20b9243",
+    "website": "https://gamingfest2025.annauniversity.edu",
+    "socialMedia": {
+      "facebook": "https://facebook.com/annauniversity",
+      "twitter": "https://twitter.com/annauniversity",
+      "instagram": "https://instagram.com/annauniversity"
+    },
+    "sponsors": [
+      "CodeX",
+      "BookWorm Publishers"
+    ],
+    "eventAgenda": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "11:30 AM",
+        "activity": "Main Event Session"
+      },
+      {
+        "time": "2:00 PM",
+        "activity": "Networking Break"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Panel Discussion"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Closing Remarks"
+      }
+    ],
+    "contactInfo": {
+      "email": "contact@gamingfest2025.annauniversity.edu",
+      "phone": "+91 8530436800"
     }
   }
 ]

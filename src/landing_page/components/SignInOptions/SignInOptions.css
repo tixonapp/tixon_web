@@ -1,6 +1,16 @@
 .siginOptions {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem; /* equivalent to Tailwind's gap-2 */
+    gap: 0.5rem;
     align-items: center;
+}
+
+/* Add these new styles */
+.relative {
+    position: relative;
+}
+
+/* Optional: Add some transition for smooth dropdown */
+.absolute {
+    transition: all 0.2s ease-in-out;
 }

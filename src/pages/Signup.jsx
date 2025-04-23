@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { supabase } from '../supabase/supabaseClient';
 import './Signup.css';
 
 function SignupPage() {
@@ -9,8 +10,9 @@ function SignupPage() {
     password: '',
     confirmPassword: ''
   });
-
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,51 +24,76 @@ function SignupPage() {
 
   const validateForm = () => {
     const newErrors = {};
-
-    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     }
-
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!emailRegex.test(formData.email)) {
       newErrors.email = 'Invalid email format';
     }
-
-    // Phone number validation
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = 'Phone number is required';
-    } else if (!phoneRegex.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = 'Invalid phone number';
-    }
-
-    // Password validation
     if (!formData.password) {
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 6) {
       newErrors.password = 'Password must be at least 6 characters';
     }
-
-    // Confirm password validation
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = 'Passwords do not match';
     }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
-  const handleSubmit = (e) => {
+  const handleGoogleSignUp = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/`,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          }
+        }
+      });
+      if (error) throw error;
+    } catch (error) {
+      setErrors({ ...errors, google: error.message });
+    }
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (validateForm()) {
-      // Form is valid, proceed with signup
-      console.log('Form submitted', formData);
-      // Add your signup logic here
+      setLoading(true);
+      try {
+        const { data, error } = await supabase.auth.signUp({
+          email: formData.email,
+          password: formData.password,
+          options: {
+            data: {
+              full_name: formData.name,
+              phone: formData.phoneNumber,
+            }
+          }
+        });
+
+        if (error) throw error;
+
+        setMessage('Registration successful! Please check your email for verification.');
+        // Clear form
+        setFormData({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          password: '',
+          confirmPassword: ''
+        });
+      } catch (error) {
+        setMessage(error.message);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -78,6 +105,12 @@ function SignupPage() {
           <p>Please fill in the details to sign up</p>
         </div>
         
+        {message && (
+          <div className={`message ${message.includes('successful') ? 'success' : 'error'}`}>
+            {message}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
@@ -106,28 +139,6 @@ function SignupPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="phoneNumber">Phone Number</label>
-            <div className="phone-group">
-              <div className="phone-input">
-                <select className="country-code" defaultValue="+1">
-                  <option value="+1">+1 (US)</option>
-                  <option value="+44">+44 (UK)</option>
-                  <option value="+91">+91 (India)</option>
-                </select>
-                <input 
-                  type="tel" 
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                  placeholder="Phone number"
-                />
-              </div>
-            </div>
-            {errors.phoneNumber && <span className="error">{errors.phoneNumber}</span>}
-          </div>
-
-          <div className="form-group">
             <label htmlFor="password">Password</label>
             <input 
               type="password" 
@@ -153,10 +164,26 @@ function SignupPage() {
             {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
           </div>
 
-          <button type="submit" className="submit-btn">
-            Sign Up
+          <button type="submit" className="submit-btn" disabled={loading}>
+            {loading ? 'Signing up...' : 'Sign Up'}
           </button>
         </form>
+        <div className="divider">
+    <span>OR</span>
+</div>
+
+<button 
+    type="button" 
+    onClick={handleGoogleSignUp}
+    className="google-signin-btn"
+>
+    <img 
+        src="/assets/google.png" 
+        alt="Google" 
+        className="google-icon"
+    />
+    Sign up with Google
+</button>
       </div>
     </div>
   );
