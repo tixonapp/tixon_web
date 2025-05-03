@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import events from "../Data/data.json";
-import HeroBanner from "../Event_page/components/HeroBanner/HeroBanner";
-import Description from "../Event_page/components/Description/Description";
-import Venue from "../Event_page/components/Venue/Venue";
-import Contact from "../Event_page/components/Contact/Contact";
+import HeroBanner from "../components/Event_page/HeroBanner/HeroBanner";
+import Description from "../components/Event_page/Description/Description";
+import Venue from "../components/Event_page/Venue/Venue";
+import Contact from "../components/Event_page//Contact/Contact";
 import "./EventPage.css";
 
 const EventPage = () => {

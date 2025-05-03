@@ -1,19 +1,19 @@
 import { lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './landing_page/components/NavBar/NavBar';
-import PhoneNavbar from './landing_page/components/PhoneNavBar/PhoneNavBar';
+import Navbar from './components/landing_page//NavBar/NavBar';
+import PhoneNavbar from './components/landing_page/PhoneNavBar/PhoneNavBar';
 import { FilterProvider } from './Context/FilterContext';
 import data from './Data/data.json';
 import './App.css';
 import { Profiler } from 'react';
 import { AuthProvider } from '../src/supabase/AuthContext';
-
+// import EventForm from './pages/EventForm';
 const EventPage = lazy(() => import('./pages/EventPage'));
-const EventSections = lazy(() => import('./landing_page/components/EventsSection/EventsSection'));
+const EventSections = lazy(() => import('./components/landing_page/EventsSection/EventsSection'));
 const SignupPage = lazy(() => import('./pages/Signup'));
 const SigninPage = lazy(() => import('./pages/Signin'));
 const ForgotPasswordPage = lazy(() => import('./pages/ForgotPassword'));
-
+const EventForm = lazy(() => import('./pages/EventForm'));
 document.title = 'Tixon';
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
             <Route path="/signup" element={<SignupPage/>} />
             <Route path="/signin" element={<SigninPage/>} />
             <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
+            <Route path="/create-event" element={<EventForm />} />
           </Routes>
         </div>
       </Router>

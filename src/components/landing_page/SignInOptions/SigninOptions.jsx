@@ -65,10 +65,11 @@ const SignInOptions = () => {
             border-[#2b300e] p-2 px-3 cursor-pointer box-border shadow-lg">
                 Sign In
             </a>
-            <a href="/signup" className="signup font-bold text-sm rounded-lg border-[#2b300e] border-1 p-2 px-3 cursor-pointer box-border shadow-lg">
-                Sign Up
+            <a href="/create-event" className="create-event font-bold text-sm rounded-lg border-[#2b300e] border-1 p-2 px-3 cursor-pointer box-border shadow-lg">
+                Create Event
             </a>
         </div>
+        
     );
 };
 
