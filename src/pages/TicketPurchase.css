@@ -1,0 +1,188 @@
+.ticket-purchase-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.ticket-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.event-date {
+  color: #666;
+  font-size: 1rem;
+}
+
+.ticket-types-container {
+  margin-bottom: 2rem;
+}
+
+.ticket-types-container h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.ticket-type-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  transition: box-shadow 0.2s ease;
+}
+
+.ticket-type-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ticket-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.ticket-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.ticket-availability {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.ticket-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quantity-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background-color: #eee;
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-display {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-width: 30px;
+  text-align: center;
+}
+
+.checkout-section {
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.amount {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.back-button, .checkout-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.back-button {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+
+.checkout-button {
+  background-color: #000;
+  color: #fff;
+  flex-grow: 1;
+}
+
+.checkout-button:hover:not(:disabled) {
+  background-color: #333;
+}
+
+.checkout-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .ticket-type-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .ticket-quantity {
+    margin-top: 1rem;
+    align-self: center;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .back-button, .checkout-button {
+    width: 100%;
+  }
+}

@@ -1,13 +1,12 @@
-// Update the imports to include location icons
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { BiSearch, BiCalendar, BiMusic,BiBriefcase,BiBookOpen,BiParty,BiGroup} from "react-icons/bi";
+import { BiSearch, BiCalendar, BiMusic, BiBriefcase, BiBookOpen, BiParty, BiGroup } from "react-icons/bi";
 import { MdLocationOn } from "react-icons/md";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Search.css";
 
-// USome random aigenerated description
+// Moved outside component to prevent recreation on each render
 const locations = [
   { name: "Puducherry, Puducherry", description: "Great for a weekend getaway", color: "#FFF5F5", iconColor: "#FF6B6B" },
   { name: "New Delhi, Delhi", description: "For sights like India Gate", color: "#F0FFF4", iconColor: "#38A169" },  
@@ -61,16 +60,18 @@ const Search = ({ onSearch }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  // Memoize resize handler to prevent recreation on each render
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [handleResize]);
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     const searchParams = {
       location,
       eventType: event,
@@ -87,15 +88,15 @@ const Search = ({ onSearch }) => {
     }
     
     if (isMobile) setExpandSearch(false);
-  };
+  }, [location, event, date, pathname, navigate, onSearch, isMobile]);
 
-  const handleLocationBlur = () => {
+  const handleLocationBlur = useCallback(() => {
     setTimeout(() => setShowLocationDropdown(false), 300);
-  };
+  }, []);
 
-  const handleEventBlur = () => {
+  const handleEventBlur = useCallback(() => {
     setTimeout(() => setShowEventDropdown(false), 300);
-  };
+  }, []);
 
   if (isMobile && !expandSearch) {
     return (
@@ -159,20 +160,20 @@ const Search = ({ onSearch }) => {
           />
         </div>
         {showEventDropdown && (
-  <ul className="dropdownMenu">
-    {events.map((eventObj, index) => (
-      <li 
-        key={index} 
-        onMouseDown={() => setEvent(eventObj.name)}
-        style={{ backgroundColor: eventObj.color }}
-        className="eventItem"
-      >
-        <div className="eventIcon" style={{ color: eventObj.iconColor }}>
-          <eventObj.icon size={20} />
-        </div>
-        <div className="eventName">{eventObj.name}</div>
-      </li>
-    ))}
+          <ul className="dropdownMenu">
+            {events.map((eventObj, index) => (
+              <li 
+                key={index} 
+                onMouseDown={() => setEvent(eventObj.name)}
+                style={{ backgroundColor: eventObj.color }}
+                className="eventItem"
+              >
+                <div className="eventIcon" style={{ color: eventObj.iconColor }}>
+                  <eventObj.icon size={20} />
+                </div>
+                <div className="eventName">{eventObj.name}</div>
+              </li>
+            ))}
           </ul>
         )}
       </div>
@@ -231,4 +232,4 @@ const Search = ({ onSearch }) => {
   );
 };
 
-export default Search;
+export default React.memo(Search);

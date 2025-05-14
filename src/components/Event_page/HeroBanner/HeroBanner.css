@@ -80,6 +80,14 @@
   padding: 1.25rem 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.countdown-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  margin-right: 0.75rem;
 }
 
 .timer-box {

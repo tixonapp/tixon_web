@@ -7,7 +7,7 @@ const Description = ({ event }) => {
   return (
     <div>
       <div className="description-container">
-        <h1 className="title">Why attend?</h1>
+        <h1 className="title">About this event</h1>
         <p className="description">
           {event.eventDescription || 'Event description coming soon...'}
         </p>

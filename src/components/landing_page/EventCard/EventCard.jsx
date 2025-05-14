@@ -21,26 +21,26 @@ const EventCard = memo(({ event }) => {
     setImageLoaded(true);
   }, []);
 
-  // Memoize the date formatting
+  // Format the start date
   const formattedDate = React.useMemo(() => {
     try {
-      const date = new Date(event.eventDate);
+      const date = new Date(event.start_datetime);
       return date.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       });
     } catch (error) {
-      return event.eventDate;
+      return 'Date not available';
     }
-  }, [event.eventDate]);
+  }, [event.start_datetime]);
 
   return (
     <Link 
       to={`/event/${event.id}`} 
       className="eventCardLink" 
       onClick={handleCardClick}
-      aria-label={`View details for ${event.eventName}`}
+      aria-label={`View details for ${event.name}`}
     >
       <article className="eventCard">
         <div className="eventImageContainer">
@@ -48,8 +48,8 @@ const EventCard = memo(({ event }) => {
             <div className="imageSkeleton" aria-hidden="true" />
           )}
           <img
-            src={imageError ? "/placeholder.svg" : event.images[0] || "/placeholder.svg"}
-            alt={event.eventName}
+            src={imageError ? "/placeholder.svg" : event.poster_url || "/placeholder.svg"}
+            alt={event.name}
             className={`eventImage ${imageLoaded ? 'loaded' : 'loading'}`}
             loading="lazy"
             onLoad={handleImageLoad}
@@ -61,7 +61,7 @@ const EventCard = memo(({ event }) => {
 
         <div className="eventInfo">
           <header className="eventName">
-            <h3>{event.eventName}</h3>
+            <h3>{event.name}</h3>
           </header>
           
           <div className="eventMetadata">
@@ -77,7 +77,7 @@ const EventCard = memo(({ event }) => {
               </svg>
               <span>{event.location}</span>
             </address>
-            <time className="dates" dateTime={event.eventDate}>
+            <time className="dates" dateTime={event.start_datetime}>
               {formattedDate}
             </time>
           </div>

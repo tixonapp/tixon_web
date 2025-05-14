@@ -16,16 +16,32 @@ const HeroBanner = ({ event }) => {
   const [timeLeft, setTimeLeft] = useState({});
 
   const calculateTimeLeft = useCallback(() => {
-    if (!event?.eventDate) return {};
-    const difference = new Date(event.eventDate) - Date.now();
-    if (difference <= 0) return {};
+    if (!event?.start_datetime) return {};
+    const difference = new Date(event.start_datetime) - Date.now();
+    if (difference <= 0) {
+      // If event has started but not ended, show countdown to end
+      if (event?.end_datetime) {
+        const endDifference = new Date(event.end_datetime) - Date.now();
+        if (endDifference > 0) {
+          return {
+            days: Math.floor(endDifference / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((endDifference / (1000 * 60 * 60)) % 24),
+            minutes: Math.floor((endDifference / 1000 / 60) % 60),
+            seconds: Math.floor((endDifference / 1000) % 60),
+            isEnding: true
+          };
+        }
+      }
+      return {};
+    }
     return {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60),
+      isEnding: false
     };
-  }, [event?.eventDate]);
+  }, [event?.start_datetime, event?.end_datetime]);
 
   useEffect(() => {
     setTimeLeft(calculateTimeLeft());
@@ -39,6 +55,8 @@ const HeroBanner = ({ event }) => {
   }, [calculateTimeLeft]);
 
   const countdownTimer = useMemo(() => {
+    if (Object.keys(timeLeft).length === 0) return null;
+    
     const timeParts = [
       { value: timeLeft.days, label: 'DAYS' },
       { value: timeLeft.hours, label: 'HOURS' },
@@ -48,6 +66,9 @@ const HeroBanner = ({ event }) => {
 
     return (
       <div className='countdown-timer'>
+        <div className="countdown-label">
+          {timeLeft.isEnding ? 'Event ends in:' : 'Event starts in:'}
+        </div>
         {timeParts.map((part, index) => (
           <React.Fragment key={part.label}>
             <div className='timer-box'>
@@ -98,15 +119,23 @@ const HeroBanner = ({ event }) => {
         <div className='content-wrapper'>
           <div className='content-grid'>
             <div className='event-content'>
-              <h1 className='event-title'>{event.eventName}</h1>
+              <h1 className='event-title'>{event.name || event.eventName}</h1>
               <div className='event-details'>
                 <p className='detail-item'>
                   <FaCalendar className='detail-icon' />
-                  {event.eventDate}
+                  <span>
+                    {event.start_datetime ? new Date(event.start_datetime).toLocaleDateString() : 'TBA'}
+                    {event.end_datetime && event.start_datetime && 
+                     new Date(event.end_datetime).toLocaleDateString() !== new Date(event.start_datetime).toLocaleDateString() ? 
+                     ` - ${new Date(event.end_datetime).toLocaleDateString()}` : ''}
+                  </span>
                 </p>
                 <p className='detail-item'>
                   <FaClock className='detail-icon' />
-                  {event.eventAgenda[0]?.time}
+                  <span>
+                    {event.start_datetime ? new Date(event.start_datetime).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : 'TBA'}
+                    {event.end_datetime ? ` - ${new Date(event.end_datetime).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}` : ''}
+                  </span>
                 </p>
                 <p className='detail-item location'>
                   <FaMap className='detail-icon' />
@@ -119,13 +148,14 @@ const HeroBanner = ({ event }) => {
             </div>
 
             <div className='price-card'>
-              <h2 className='price-title'>Price: {event.ticketPrice}</h2>
+              <h2 className='price-title'>Type: {event.ticketType}</h2>
               <button 
                 className='ticket-button' 
                 disabled={!event.isAvailable}
                 onClick={() => {
                   if (event.isAvailable) {
-                    // Handle registration in future...........
+                    // Navigate to ticket purchase page using relative URL
+                    window.location.href = `${window.location.pathname}/tickets`;
                   }
                 }}
               >

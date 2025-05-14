@@ -7,7 +7,7 @@
   border-radius: 4px;
   background-color: #fff;
 }
-
+/* .pac-container:after { content: none !important; } */
 .step-indicator {
   font-size: 1.2rem;
   margin-bottom: 2rem;
@@ -92,4 +92,60 @@ pre {
     padding: 1rem;
     border: none;
   }
+}
+/* Add these styles to fix dropdown display issues */
+
+
+/* Add these styles to EventForm.css */
+.pac-container {
+  z-index: 10000;
+  width: auto !important;
+  position: absolute !important;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+.ticket-types-container {
+  margin-bottom: 20px;
+}
+
+.ticket-type-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.ticket-type-row .form-group {
+  flex: 1;
+}
+
+.add-ticket-btn, .remove-ticket-btn {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-ticket-btn {
+  margin-top: 10px;
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.remove-ticket-btn {
+  height: 38px;
+  background-color: #fff2f0;
+  border-color: #ffccc7;
 }

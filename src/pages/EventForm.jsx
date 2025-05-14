@@ -12,25 +12,28 @@ import './EventForm.css'
 export default function EventForm() {
   const [step, setStep] = useState(1)
   const formRef = useRef(null)
-  const [formData, setFormData] = useState({
-    creator_name: '',
-    phone: '',
-    personal_email: '',
-    professional_email: '',
-    event_name: '',
-    mode: 'In-person',
-    start_datetime: '',
-    end_datetime: '',
-    poster_url: '',
-    location: '',
-    description: '',
-    category: '',
-    agenda: '',
-    organizers: [{ name: '', personal_email: '', college_email: '', phone: '' }],
-    event_type: 'Free',
-    total_tickets: '',
-    price: 0,
-  })
+  // In EventForm.jsx, update the formData state to include location_data
+const [formData, setFormData] = useState({
+  creator_name: '',
+  phone: '',
+  personal_email: '',
+  professional_email: '',
+  event_name: '',
+  mode: 'In-person',
+  start_datetime: '',
+  end_datetime: '',
+  poster_url: '',
+  location: '',
+  // location_data: '', // Add this field to store detailed location data
+  description: '',
+  category: '',
+  agenda: '',
+  organizers: [{ name: '', personal_email: '', college_email: '', phone: '' }],
+  event_type: 'Free',
+  total_tickets: '',
+  price: 0,
+});
+
 
   const next = () => {
     if (formRef.current && !formRef.current.reportValidity()) return
@@ -89,6 +92,7 @@ export default function EventForm() {
           end_datetime: formData.end_datetime,
           poster_url: formData.poster_url,
           location: formData.location,
+          location_data: formData.location_data,
           description: formData.description,
           category: formData.category,
           agenda: formData.agenda,
@@ -119,6 +123,7 @@ export default function EventForm() {
         event_type: formData.event_type,
         total_tickets: parseInt(formData.total_tickets, 10) || 0,
         price: parseInt(formData.price, 10) || 0,
+        ticket_types: formData.ticketTypes
       })
 
       if (err4) throw err4
