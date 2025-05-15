@@ -1,0 +1,48 @@
+.phoneNavBar {
+    display: none;
+    position: fixed; 
+    /* Fixes the navbar to the viewport */
+    width: 100%; /* Full width */
+    z-index: 20; /* Ensures it appears above other elements */
+    flex-direction: row; /* Items in a row */
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Spaces items evenly */
+    padding: 8px 20px; /* Equivalent to py-3 (12px) and px-20 (80px) */
+    background-color: #ffffff; /* Light green background */
+    border-bottom: 0.5px solid #2b300e; /* Thin bottom border */
+}
+.nav-actions-mobile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .create-event-btn-mobile {
+    background-color: #000;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .create-event-btn-mobile:hover {
+    background-color: #333;
+  }
+  
+  @media (max-width: 480px) {
+    .create-event-btn-mobile {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.7rem;
+    }
+  }
+  
+/* Hide on small screens */
+@media (max-width: 800px) { /* Tailwind's 'sm' breakpoint */
+    .phoneNavBar {
+        display:flex;
+    }
+}

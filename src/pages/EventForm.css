@@ -1,0 +1,151 @@
+/* form.css */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: #fff;
+}
+/* .pac-container:after { content: none !important; } */
+.step-indicator {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #000;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+.nav-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.organizer-group {
+  border: 1px solid #000;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.add-organizer {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  .form-container {
+    padding: 1rem;
+    border: none;
+  }
+}
+/* Add these styles to fix dropdown display issues */
+
+
+/* Add these styles to EventForm.css */
+.pac-container {
+  z-index: 10000;
+  width: auto !important;
+  position: absolute !important;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+.ticket-types-container {
+  margin-bottom: 20px;
+}
+
+.ticket-type-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.ticket-type-row .form-group {
+  flex: 1;
+}
+
+.add-ticket-btn, .remove-ticket-btn {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-ticket-btn {
+  margin-top: 10px;
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.remove-ticket-btn {
+  height: 38px;
+  background-color: #fff2f0;
+  border-color: #ffccc7;
+}
