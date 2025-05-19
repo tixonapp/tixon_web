@@ -112,6 +112,25 @@
   margin-right: 8px;
 }
 
+/* Disabled checkbox styling */
+.disabled-checkbox {
+  opacity: 0.6;
+  cursor: not-allowed;
+  color: #777;
+}
+
+.admin-note {
+  font-size: 0.8rem;
+  color: #777;
+  font-style: italic;
+  margin-left: 8px;
+}
+
+input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .form-actions {
   display: flex;
   justify-content: flex-end;

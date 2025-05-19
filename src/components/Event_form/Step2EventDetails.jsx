@@ -321,7 +321,15 @@ export default function Step2EventDetails({ formRef, formData, handleChange }) {
       </div>
       <div className="form-group">
         <label>Category*</label>
-        <input name="category" value={formData.category || ''} onChange={handleChange} required />
+        <select name="category" value={formData.category || ''} onChange={handleChange} required>
+          <option value="">Select a category</option>
+          <option value="Workshops">Workshops</option>
+          <option value="Symposium">Symposium</option>
+          <option value="Paper Presentation">Paper Presentation</option>
+          <option value="Hackathons">Hackathons</option>
+          <option value="Cultural Fests">Cultural Fests</option>
+          <option value="Entrepreneurship Events">Entrepreneurship Events</option>
+        </select>
       </div>
       <div className="form-group">
         <label>Agenda</label>

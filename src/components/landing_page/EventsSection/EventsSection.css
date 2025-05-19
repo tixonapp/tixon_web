@@ -44,62 +44,138 @@
   
   
   .eventsSectionContainer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .categoryFilters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
     width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+  }
+  
+  .categoryButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    color: #000000;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .categoryButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categoryButton.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+  }
+  
+  .categoryIcon {
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .categoryName {
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .eventsSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1320px;
+    padding: 0 20px;
   }
   
   .loadMoreContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 24px 0;
+    margin-top: 30px;
+    text-align: center;
   }
   
   .loadMoreButton {
-    background-color: #222222;
+    background-color: #3b82f6;
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 8px;
-    font-size: 16px;
     cursor: pointer;
+    font-weight: 500;
     transition: background-color 0.2s;
   }
   
   .loadMoreButton:hover {
-    background-color: #333333;
+    background-color: #2563eb;
   }
-  .eventsSectionContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  
+  .loading,
+  .error,
+  .no-events {
+    padding: 20px;
+    text-align: center;
     width: 100%;
-    min-height: 100vh; /* Ensure container takes full height */
   }
   
-  .loadMoreContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 24px 0;
-    margin-top: auto; /* Push to bottom if content is short */
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .categoryButton {
+      padding: 8px 12px;
+    }
+    
+    .categoryIcon {
+      font-size: 20px;
+    }
+    
+    .categoryName {
+      font-size: 12px;
+    }
+    
+    .eventsSection {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
   }
   
-  .loadMoreButton {
-    background-color: #222222;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .loadMoreButton:hover {
-    background-color: #333333;
+  @media (max-width: 480px) {
+    .categoryFilters {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .categoryButton {
+      min-width: 85px;
+      margin-right: 5px;
+      flex-shrink: 0;
+    }
+    
+    .categoryName {
+      font-size: 11px;
+      white-space: nowrap;
+    }
   }
   
   /* Add smooth scrolling to body */

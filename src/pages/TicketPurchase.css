@@ -186,3 +186,84 @@
     width: 100%;
   }
 }
+
+/* Confirmation Page Styles */
+.confirmation-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.confirmation-header h1 {
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.payment-id {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.confirmation-content {
+  margin-bottom: 2rem;
+}
+
+.event-tickets {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-tickets h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.ticket-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticket-item {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.ticket-item p {
+  margin: 0.5rem 0;
+}
+
+.total-info {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-weight: 500;
+}
+
+.total-info p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.confirmation-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.confirmation-footer p {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.confirmation-footer .back-button {
+  margin-top: 1.5rem;
+  display: inline-block;
+}

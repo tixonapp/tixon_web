@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { supabase } from "../supabase/supabaseClient";
+import { isSuperAdmin } from "../supabase/superAdminHelpers";
 import "./AdminPanel.css";
 
 const AdminEventEdit = () => {
@@ -10,8 +11,42 @@ const AdminEventEdit = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({});
+  const [user, setUser] = useState(null);
+  const [isSuperUser, setIsSuperUser] = useState(false);
+
+  // Get authenticated user and check if super admin
+  useEffect(() => {
+    const getUserSession = async () => {
+      try {
+      const { data, error } = await supabase.auth.getUser();
+      if (error) {
+        console.error('Error getting user:', error);
+        setError('You must be logged in to access this page');
+          return;
+        }
+        
+        if (!data || !data.user) {
+          setError('You must be logged in to access this page');
+          return;
+        }
+        
+        setUser(data.user);
+        
+        // Check if user is super admin
+        const superAdminStatus = await isSuperAdmin();
+        setIsSuperUser(superAdminStatus);
+      } catch (error) {
+        console.error('Error checking user session:', error);
+        setError('An error occurred. Please try again.');
+      }
+    };
+
+    getUserSession();
+  }, []);
 
   useEffect(() => {
+    if (!user) return;
+    
     const fetchEvent = async () => {
       try {
         const { data, error } = await supabase
@@ -27,6 +62,12 @@ const AdminEventEdit = () => {
         
         if (!data) {
           setError("Event not found");
+          return;
+        }
+
+        // Check if the event belongs to the current user
+        if (data.creator_id !== user.id) {
+          setError("You do not have permission to edit this event");
           return;
         }
 
@@ -53,7 +94,7 @@ const AdminEventEdit = () => {
     };
 
     fetchEvent();
-  }, [id]);
+  }, [id, user]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -65,11 +106,27 @@ const AdminEventEdit = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!user || !event || event.creator_id !== user.id) {
+      alert('You do not have permission to edit this event');
+      return;
+    }
+    
     try {
+      // Preserve the original visibility and availability settings for regular users
+      let dataToUpdate = { ...formData };
+      
+      if (!isSuperUser) {
+        // Always keep the original values for these fields
+        dataToUpdate.isVisible = event.isVisible;
+        dataToUpdate.isAvailable = event.isAvailable;
+      }
+      
       const { error } = await supabase
         .from('events')
-        .update(formData)
-        .eq('id', id);
+        .update(dataToUpdate)
+        .eq('id', id)
+        .eq('creator_id', user.id); // Extra security to ensure only the creator can update
 
       if (error) throw error;
       
@@ -204,6 +261,8 @@ const AdminEventEdit = () => {
             </div>
           </div>
 
+          {/* Only render visibility/availability options for super admins */}
+          {isSuperUser && (
           <div className="form-row checkbox-row">
             <div className="form-group checkbox-group">
               <label>
@@ -229,6 +288,7 @@ const AdminEventEdit = () => {
               </label>
             </div>
           </div>
+          )}
 
           <div className="form-group">
             <label>Description</label>

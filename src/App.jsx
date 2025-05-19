@@ -10,7 +10,7 @@ import { Profiler } from 'react';
 import { AuthProvider } from '../src/supabase/AuthContext';
 
 const EventPage = lazy(() => import('./pages/EventPage'));
-const EventSections = lazy(() => import('./components/landing_page/EventsSection/EventsSection'));
+import EventSections from './components/landing_page/EventsSection/EventsSection';
 const SignupPage = lazy(() => import('./pages/Signup'));
 const SigninPage = lazy(() => import('./pages/Signin'));
 const ForgotPasswordPage = lazy(() => import('./pages/ForgotPassword'));
@@ -21,6 +21,15 @@ const AdminOrganizers = lazy(() => import('./pages/AdminOrganizers'));
 const AdminRegistrations = lazy(() => import('./pages/AdminRegistrations'));
 const AdminEventEdit = lazy(() => import('./pages/AdminEventEdit'));
 const TicketPurchase = lazy(() => import('./pages/TicketPurchase'));
+const PaymentConfirmation = lazy(() => import('./pages/PaymentConfirmation'));
+
+// Super Admin pages
+const SuperAdmin = lazy(() => import('./pages/SuperAdmin'));
+const SuperAdminCreators = lazy(() => import('./pages/SuperAdminCreators'));
+const SuperAdminOrganizers = lazy(() => import('./pages/SuperAdminOrganizers'));
+const SuperAdminRegistrations = lazy(() => import('./pages/SuperAdminRegistrations'));
+const SuperAdminUsers = lazy(() => import('./pages/SuperAdminUsers'));
+const SuperAdminEventEdit = lazy(() => import('./pages/SuperAdminEventEdit'));
 
 document.title = 'Tixon';
 
@@ -49,6 +58,15 @@ function App() {
                   <Route path="/admin/creators" element={<AdminCreators />} />
                   <Route path="/admin/organizers" element={<AdminOrganizers />} />
                   <Route path="/admin/registrations" element={<AdminRegistrations />} />
+                  <Route path="/confirmation/:paymentId" element={<PaymentConfirmation />} />
+                  
+                  {/* Super Admin Routes */}
+                  <Route path="/super-admin" element={<SuperAdmin />} />
+                  <Route path="/super-admin/events/:id" element={<SuperAdminEventEdit />} />
+                  <Route path="/super-admin/creators" element={<SuperAdminCreators />} />
+                  <Route path="/super-admin/organizers" element={<SuperAdminOrganizers />} />
+                  <Route path="/super-admin/registrations" element={<SuperAdminRegistrations />} />
+                  <Route path="/super-admin/users" element={<SuperAdminUsers />} />
                 </Routes>
               </Suspense>
             </div>

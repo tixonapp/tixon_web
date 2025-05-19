@@ -1,23 +1,41 @@
 .table-container {
   width: 100%;
   margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .table-container h2 {
-  margin-bottom: 16px;
+  margin: 0;
   font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.responsive-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 20px;
 }
 
 .data-table {
   width: 100%;
   border-collapse: collapse;
   background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .data-table th,
 .data-table td {
-  padding: 12px;
+  padding: 12px 16px;
   text-align: left;
   border-bottom: 1px solid #eee;
 }
@@ -25,26 +43,53 @@
 .data-table th {
   background-color: #f5f5f5;
   font-weight: 600;
+  color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.data-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.editing-row {
+  background-color: rgba(0, 123, 255, 0.05) !important;
+}
+
+.editing-row td {
+  border-bottom: 1px solid rgba(0, 123, 255, 0.2);
 }
 
 .no-data {
   text-align: center;
   color: #999;
-  padding: 20px;
+  padding: 32px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
 }
 
 .loading {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   color: #666;
+  font-size: 16px;
 }
 
 /* Edit mode styling */
 .edit-input {
   width: 100%;
-  padding: 6px;
-  border: 1px solid #ddd;
+  padding: 8px;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.edit-input:focus {
+  border-color: #2196F3;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
 }
 
 .action-buttons {
@@ -52,12 +97,13 @@
   gap: 8px;
 }
 
-.edit-button, .save-button, .cancel-button {
+.edit-button, .save-button, .cancel-button, .delete-button {
   padding: 6px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  transition: all 0.2s;
 }
 
 .edit-button {
@@ -65,9 +111,17 @@
   color: #333;
 }
 
+.edit-button:hover {
+  background-color: #e0e0e0;
+}
+
 .save-button {
   background-color: #4CAF50;
   color: white;
+}
+
+.save-button:hover {
+  background-color: #45a049;
 }
 
 .cancel-button {
@@ -75,8 +129,127 @@
   color: white;
 }
 
+.cancel-button:hover {
+  background-color: #d32f2f;
+}
+
+.delete-button {
+  background-color: #FF5722;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #E64A19;
+}
+
+.edit-button:disabled, .save-button:disabled, .cancel-button:disabled, .delete-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* Expanded row styling */
 .expanded-content {
   padding: 0 !important;
   background-color: #f9f9f9;
+}
+
+.expanded-form {
+  padding: 16px;
+}
+
+/* Super Admin specific styles */
+.super-table .data-table th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.super-table .editing-row {
+  background-color: rgba(44, 62, 80, 0.05) !important;
+}
+
+.super-admin-row {
+  background-color: rgba(33, 150, 243, 0.05);
+}
+
+.super-admin-row:hover {
+  background-color: rgba(33, 150, 243, 0.1) !important;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-super-admin {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status-regular {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.grant-button, .revoke-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.grant-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.revoke-button {
+  background-color: #FF9800;
+  color: white;
+}
+
+.grant-button:hover {
+  background-color: #0b7dda;
+}
+
+.revoke-button:hover {
+  background-color: #e68a00;
+}
+
+.error {
+  color: #f44336;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  background-color: #ffebee;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.no-data-message, .no-events-message {
+  padding: 32px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    padding: 12px;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 10px;
+  }
+  
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }

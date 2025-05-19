@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { supabase } from '../supabase/supabaseClient'
 import StepIndicator from '../components/Event_form/StepIndicator'
 import Step1CreatorInfo from '../components/Event_form/Step1CreatorInfo'
@@ -69,69 +69,136 @@ const [formData, setFormData] = useState({
 
   const handleSubmit = async () => {
     try {
-      const { data: creator, error: err1 } = await supabase
+      // Get the current authenticated user
+      const { data: { user }, error: authError } = await supabase.auth.getUser();
+      
+      if (authError) {
+        console.error('Authentication error:', authError);
+        throw new Error(`Authentication failed: ${authError.message}`);
+      }
+      
+      if (!user) {
+        throw new Error('You must be logged in to create an event');
+      }
+      
+      console.log('Authenticated user ID:', user.id);
+      
+      // First, create or update creator info
+      const creatorData = {
+        id: user.id, // Use the authenticated user's ID as the creator's ID
+        name: formData.creator_name,
+        phone: formData.phone,
+        personal_email: formData.personal_email,
+        professional_email: formData.professional_email,
+      };
+      
+      console.log('Creating/updating creator info:', creatorData);
+      
+      const { error: creatorError } = await supabase
         .from('event_creators')
-        .insert({
-          name: formData.creator_name,
-          phone: formData.phone,
-          personal_email: formData.personal_email,
-          professional_email: formData.professional_email,
-        })
+        .upsert(creatorData)
         .select()
-        .single()
+        .single();
 
-      if (err1 || !creator) throw err1 || new Error('Failed to create creator')
-
-      const { data: event, error: err2 } = await supabase
+      if (creatorError) {
+        console.error('Creator update error:', creatorError);
+        throw new Error(`Failed to create/update creator: ${creatorError.message}`);
+      }
+      
+      console.log('Creator created/updated successfully');
+      
+      // Now create the event with the creator_id
+      const eventData = {
+        creator_id: user.id, // Use the authenticated user's ID
+        name: formData.event_name,
+        mode: formData.mode,
+        start_datetime: formData.start_datetime,
+        end_datetime: formData.end_datetime,
+        poster_url: formData.poster_url,
+        location: formData.location,
+        location_data: formData.location_data,
+        description: formData.description,
+        category: formData.category,
+        agenda: formData.agenda,
+        isVisible: false,
+        isAvailable: false
+      };
+      
+      console.log('Attempting to create event with data:', eventData);
+      
+      const { data: event, error: eventError } = await supabase
         .from('events')
-        .insert({
-          creator_id: creator.id,
-          name: formData.event_name,
-          mode: formData.mode,
-          start_datetime: formData.start_datetime,
-          end_datetime: formData.end_datetime,
-          poster_url: formData.poster_url,
-          location: formData.location,
-          location_data: formData.location_data,
-          description: formData.description,
-          category: formData.category,
-          agenda: formData.agenda,
-        })
+        .insert(eventData)
         .select()
-        .single()
+        .single();
 
-      if (err2 || !event) throw err2 || new Error('Failed to create event')
+      if (eventError) {
+        console.error('Event creation error:', eventError);
+        throw new Error(`Failed to create event: ${eventError.message}`);
+      }
+      
+      if (!event) {
+        throw new Error('Event was created but no data was returned');
+      }
+      
+      console.log('Event created successfully:', event);
 
-      const organizersErrors = (
-        await Promise.all(
-          formData.organizers.map(async org => {
-            const { error } = await supabase.from('event_organizers').insert({
-              event_id: event.id,
-              name: org.name,
-              personal_email: org.personal_email,
-              college_email: org.college_email,
-              phone: org.phone,
-            })
-            return error
-          })
-        )
-      ).filter(Boolean)
-      if (organizersErrors.length > 0) throw organizersErrors[0]
+      // Add organizers
+      console.log('Adding organizers for event ID:', event.id);
+      
+      const organizerPromises = formData.organizers.map(async (org, index) => {
+        const organizerData = {
+          event_id: event.id,
+          name: org.name,
+          personal_email: org.personal_email,
+          college_email: org.college_email,
+          phone: org.phone,
+        };
+        
+        console.log(`Adding organizer ${index + 1}:`, organizerData);
+        
+        const { error } = await supabase
+          .from('event_organizers')
+          .insert(organizerData);
+          
+        if (error) {
+          console.error(`Error adding organizer ${index + 1}:`, error);
+        }
+        
+        return error;
+      });
+      
+      const organizersErrors = (await Promise.all(organizerPromises)).filter(Boolean);
+      
+      if (organizersErrors.length > 0) {
+        console.error('Organizer errors:', organizersErrors);
+        throw organizersErrors[0];
+      }
 
-      const { error: err4 } = await supabase.from('event_registrations').insert({
+      // Add registration details
+      const registrationData = {
         event_id: event.id,
         event_type: formData.event_type,
         total_tickets: parseInt(formData.total_tickets, 10) || 0,
         price: parseInt(formData.price, 10) || 0,
         ticket_types: formData.ticketTypes
-      })
+      };
+      
+      console.log('Adding registration details:', registrationData);
+      
+      const { error: registrationError } = await supabase
+        .from('event_registrations')
+        .insert(registrationData);
 
-      if (err4) throw err4
+      if (registrationError) {
+        console.error('Registration error:', registrationError);
+        throw registrationError;
+      }
 
-      alert('Event created successfully!')
+      alert('Event created successfully!');
     } catch (error) {
-      console.error('Submission error:', error)
-      alert(`Error creating event: ${error.message}`)
+      console.error('Submission error:', error);
+      alert(`Error creating event: ${error.message}`);
     }
   }
 

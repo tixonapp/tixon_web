@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import EventCard from "../EventCard/EventCard";
 import { useFilters } from '../../../Context/FilterContext';
 import { supabase } from '../../../supabase/supabaseClient';
+import EventCarousel from '../EventCarousel/EventCarousel';
 import "./EventsSection.css";
 
 const EventSections = () => {
@@ -10,6 +11,18 @@ const EventSections = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibleEvents, setVisibleEvents] = useState(8);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Category definitions with icons
+  const categories = [
+    { id: 'All', name: 'All Events', icon: '🌟' },
+    { id: 'Workshops', name: 'Workshops', icon: '🔧' },
+    { id: 'Symposium', name: 'Symposium', icon: '🎤' },
+    { id: 'Paper Presentation', name: 'Paper Presentation', icon: '📝' },
+    { id: 'Hackathons', name: 'Hackathons', icon: '💻' },
+    { id: 'Cultural Fests', name: 'Cultural Fests', icon: '🎭' },
+    { id: 'Entrepreneurship Events', name: 'Entrepreneurship', icon: '💼' }
+  ];
 
   // Fetch events from Supabase with related data
   useEffect(() => {
@@ -25,7 +38,6 @@ const EventSections = () => {
             )
           `)
           .eq('isVisible', true)
-         
           .order('start_datetime', { ascending: true });
 
         if (error) throw error;
@@ -63,6 +75,11 @@ const EventSections = () => {
     };
   }, []);
 
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setVisibleEvents(8); // Reset visible events when changing category
+  };
+
   const filteredEvents = events.filter(event => {
     const matchesLocation = !filters.location || 
       event.location?.toLowerCase().includes(filters.location.toLowerCase());
@@ -73,7 +90,10 @@ const EventSections = () => {
     const matchesDate = !filters.date || 
       (event.start_datetime && new Date(event.start_datetime).toDateString() === filters.date.toDateString());
 
-    return matchesLocation && matchesEventType && matchesDate;
+    const matchesCategory = selectedCategory === 'All' || 
+      event.category === selectedCategory;
+
+    return matchesLocation && matchesEventType && matchesDate && matchesCategory;
   });
 
   const eventsToDisplay = filteredEvents.slice(0, visibleEvents);
@@ -87,6 +107,22 @@ const EventSections = () => {
 
   return (
     <div className="eventsSectionContainer">
+      {/* Event Carousel */}
+      <EventCarousel events={events} />
+      
+      <div className="categoryFilters">
+        {categories.map(category => (
+          <button 
+            key={category.id}
+            className={`categoryButton ${selectedCategory === category.id ? 'active' : ''}`}
+            onClick={() => handleCategoryChange(category.id)}
+          >
+            <span className="categoryIcon">{category.icon}</span>
+            <span className="categoryName">{category.name}</span>
+          </button>
+        ))}
+      </div>
+      
       <div className="eventsSection">
         {eventsToDisplay.length > 0 ? (
           eventsToDisplay.map((event) => (

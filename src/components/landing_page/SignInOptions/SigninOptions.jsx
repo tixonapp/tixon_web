@@ -45,12 +45,16 @@ const SignInOptions = () => {
                         >
                             View Profile
                         </a>
+                        <a href="/create-event" className="create-event font-bold    p-2 px-3 cursor-pointer ">
+                Create Event
+            </a>
                         <button 
                             onClick={handleLogout}
                             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         >
                             Logout
                         </button>
+                       
                     </div>
                 )}
             </div>
@@ -65,7 +69,7 @@ const SignInOptions = () => {
             border-[#2b300e] p-2 px-3 cursor-pointer box-border shadow-lg">
                 Sign In
             </a>
-            <a href="/create-event" className="create-event font-bold text-sm rounded-lg border-[#2b300e] border-1 p-2 px-3 cursor-pointer box-border shadow-lg">
+            <a href="/signin" className="create-event font-bold text-sm rounded-lg border-[#2b300e] border-1 p-2 px-3 cursor-pointer box-border shadow-lg">
                 Create Event
             </a>
         </div>

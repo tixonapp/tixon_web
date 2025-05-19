@@ -1,65 +1,49 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { supabase } from '../../supabase/supabaseClient';
 import './TableStyles.css';
 
-const OrganizersTable = ({ userId }) => {
+const SuperOrganizersTable = () => {
   const [organizers, setOrganizers] = useState([]);
+  const [events, setEvents] = useState({});
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [editingOrganizer, setEditingOrganizer] = useState(null);
   const [formData, setFormData] = useState({});
-  const [userEvents, setUserEvents] = useState([]);
 
   useEffect(() => {
-    if (userId) {
-      fetchOrganizers();
-      fetchUserEvents();
-    }
-  }, [userId]);
+    fetchOrganizersAndEvents();
+  }, []);
 
-  const fetchUserEvents = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('events')
-        .select('id, name')
-        .eq('creator_id', userId);
-
-      if (error) throw error;
-      setUserEvents(data || []);
-    } catch (error) {
-      console.error('Error fetching user events:', error);
-    }
-  };
-
-  const fetchOrganizers = async () => {
+  const fetchOrganizersAndEvents = async () => {
     try {
       setLoading(true);
       
-      // First get all events created by this user
-      const { data: userEvents, error: eventsError } = await supabase
+      // Fetch all events first (for display purposes)
+      const { data: eventsData, error: eventsError } = await supabase
         .from('events')
-        .select('id')
-        .eq('creator_id', userId);
-        
+        .select('id, name');
+      
       if (eventsError) throw eventsError;
       
-      if (!userEvents || userEvents.length === 0) {
-        setOrganizers([]);
-        return;
-      }
+      // Create a map of event IDs to names
+      const eventMap = {};
+      eventsData.forEach(event => {
+        eventMap[event.id] = event.name;
+      });
       
-      // Then get all organizers for these events
-      const eventIds = userEvents.map(event => event.id);
+      setEvents(eventMap);
+      
+      // Fetch all organizers without filtering by event
       const { data, error } = await supabase
         .from('event_organizers')
-        .select('*, events(name)')
-        .in('event_id', eventIds);
+        .select('*')
+        .order('name', { ascending: true });
 
       if (error) throw error;
       setOrganizers(data || []);
     } catch (error) {
       console.error('Error fetching organizers:', error);
-      alert('Failed to fetch organizers');
+      setError('Failed to fetch organizers data');
     } finally {
       setLoading(false);
     }
@@ -87,7 +71,7 @@ const OrganizersTable = ({ userId }) => {
 
       if (error) throw error;
       setEditingOrganizer(null);
-      fetchOrganizers();
+      fetchOrganizersAndEvents();
     } catch (error) {
       console.error('Error updating organizer:', error);
       alert('Failed to update organizer');
@@ -99,21 +83,15 @@ const OrganizersTable = ({ userId }) => {
   };
 
   if (loading) return <div className="loading">Loading organizers...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="table-container">
-      <div className="table-header">
-        <h2>Event Organizers</h2>
-      </div>
+      <h2>All Organizers (Super Admin)</h2>
       
-      {userEvents.length === 0 ? (
-        <div className="no-events-message">
-          <p>You need to create events before viewing organizers.</p>
-        </div>
-      ) : organizers.length === 0 ? (
+      {organizers.length === 0 ? (
         <div className="no-data-message">
-          <p>No organizers found for your events.</p>
-          <p>Organizers can only be added through the event creation process.</p>
+          <p>No organizers found in the system.</p>
         </div>
       ) : (
         <table className="data-table">
@@ -124,6 +102,7 @@ const OrganizersTable = ({ userId }) => {
               <th>Phone</th>
               <th>Personal Email</th>
               <th>College Email</th>
+              <th>Created At</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -140,10 +119,10 @@ const OrganizersTable = ({ userId }) => {
                       className="edit-input"
                     />
                   ) : (
-                    organizer.name
+                    organizer.name || 'N/A'
                   )}
                 </td>
-                <td>{organizer.events?.name || 'N/A'}</td>
+                <td>{events[organizer.event_id] || 'Unknown Event'}</td>
                 <td>
                   {editingOrganizer === organizer.id ? (
                     <input
@@ -154,7 +133,7 @@ const OrganizersTable = ({ userId }) => {
                       className="edit-input"
                     />
                   ) : (
-                    organizer.phone
+                    organizer.phone || 'N/A'
                   )}
                 </td>
                 <td>
@@ -167,7 +146,7 @@ const OrganizersTable = ({ userId }) => {
                       className="edit-input"
                     />
                   ) : (
-                    organizer.personal_email
+                    organizer.personal_email || 'N/A'
                   )}
                 </td>
                 <td>
@@ -180,9 +159,10 @@ const OrganizersTable = ({ userId }) => {
                       className="edit-input"
                     />
                   ) : (
-                    organizer.college_email
+                    organizer.college_email || 'N/A'
                   )}
                 </td>
+                <td>{organizer.created_at ? new Date(organizer.created_at).toLocaleString() : 'N/A'}</td>
                 <td>
                   {editingOrganizer === organizer.id ? (
                     <div className="action-buttons">
@@ -202,8 +182,4 @@ const OrganizersTable = ({ userId }) => {
   );
 };
 
-OrganizersTable.propTypes = {
-  userId: PropTypes.string.isRequired
-};
-
-export default OrganizersTable;
+export default SuperOrganizersTable; 

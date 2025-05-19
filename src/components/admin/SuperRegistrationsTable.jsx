@@ -1,64 +1,56 @@
 import { useState, useEffect, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { supabase } from '../../supabase/supabaseClient';
 import TicketTypesEditor from './TicketTypesEditor';
 import './TableStyles.css';
 
-const RegistrationsTable = ({ userId }) => {
+const SuperRegistrationsTable = () => {
   const [registrations, setRegistrations] = useState([]);
+  const [events, setEvents] = useState({});
   const [loading, setLoading] = useState(true);
   const [expandedRegistration, setExpandedRegistration] = useState(null);
-  const [userEvents, setUserEvents] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (userId) {
-      fetchUserEvents();
-    }
-  }, [userId]);
+    fetchRegistrationsAndEvents();
+  }, []);
 
-  const fetchUserEvents = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('events')
-        .select('id')
-        .eq('creator_id', userId);
-
-      if (error) throw error;
-      setUserEvents(data || []);
-      
-      if (data && data.length > 0) {
-        fetchRegistrations(data.map(event => event.id));
-      } else {
-        setLoading(false);
-      }
-    } catch (error) {
-      console.error('Error fetching user events:', error);
-      setLoading(false);
-    }
-  };
-
-  const fetchRegistrations = async (eventIds) => {
+  const fetchRegistrationsAndEvents = async () => {
     try {
       setLoading(true);
+      
+      // Fetch all events first (for display purposes)
+      const { data: eventsData, error: eventsError } = await supabase
+        .from('events')
+        .select('id, name');
+      
+      if (eventsError) throw eventsError;
+      
+      // Create a map of event IDs to names
+      const eventMap = {};
+      eventsData.forEach(event => {
+        eventMap[event.id] = event.name;
+      });
+      
+      setEvents(eventMap);
+      
+      // Fetch all registrations
       const { data, error } = await supabase
         .from('event_registrations')
-        .select('*, events(name)')
-        .in('event_id', eventIds);
+        .select('*')
+        .order('created_at', { ascending: false });
 
       if (error) throw error;
       setRegistrations(data || []);
     } catch (error) {
       console.error('Error fetching registrations:', error);
-      alert('Failed to fetch registrations');
+      setError('Failed to fetch registrations data');
     } finally {
       setLoading(false);
     }
   };
 
   const handleRegistrationUpdate = () => {
-    if (userEvents && userEvents.length > 0) {
-      fetchRegistrations(userEvents.map(event => event.id));
-    }
+    fetchRegistrationsAndEvents();
   };
 
   const toggleExpand = (id) => {
@@ -66,18 +58,15 @@ const RegistrationsTable = ({ userId }) => {
   };
 
   if (loading) return <div className="loading">Loading registrations...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="table-container">
-      <h2>Event Registrations</h2>
+      <h2>All Registrations (Super Admin)</h2>
       
-      {userEvents.length === 0 ? (
-        <div className="no-events-message">
-          <p>You need to create events before viewing registrations.</p>
-        </div>
-      ) : registrations.length === 0 ? (
+      {registrations.length === 0 ? (
         <div className="no-data-message">
-          <p>No registrations found for your events.</p>
+          <p>No registrations found in the system.</p>
         </div>
       ) : (
         <table className="data-table">
@@ -97,17 +86,17 @@ const RegistrationsTable = ({ userId }) => {
               <Fragment key={registration.id}>
                 <tr>
                   <td>{registration.id}</td>
-                  <td>{registration.events?.name || 'N/A'}</td>
+                  <td>{events[registration.event_id] || 'Unknown Event'}</td>
                   <td>{registration.event_type}</td>
                   <td>{registration.total_tickets}</td>
-                  <td>₹{registration.price}</td>
+                  <td>₹{registration.price || 0}</td>
                   <td>{new Date(registration.created_at).toLocaleString()}</td>
                   <td>
                     <button 
                       onClick={() => toggleExpand(registration.id)} 
                       className="edit-button"
                     >
-                      {expandedRegistration === registration.id ? 'Hide Tickets' : 'Edit Tickets'}
+                      {expandedRegistration === registration.id ? 'Hide Tickets' : 'View Tickets'}
                     </button>
                   </td>
                 </tr>
@@ -117,6 +106,7 @@ const RegistrationsTable = ({ userId }) => {
                       <TicketTypesEditor 
                         registration={registration} 
                         onUpdate={handleRegistrationUpdate}
+                        readOnly={true}
                       />
                     </td>
                   </tr>
@@ -130,8 +120,4 @@ const RegistrationsTable = ({ userId }) => {
   );
 };
 
-RegistrationsTable.propTypes = {
-  userId: PropTypes.string.isRequired
-};
-
-export default RegistrationsTable;
+export default SuperRegistrationsTable; 

@@ -1,0 +1,347 @@
+[
+    {
+      "table_name": "user_tickets",
+      "column_name": "purchase_time",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "super_admins",
+      "column_name": "user_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "super_admins",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "super_admins",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "event_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "quantity",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "purchase_time",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "ticket_data",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "ticket_info",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "events",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "events",
+      "column_name": "creator_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "events",
+      "column_name": "start_datetime",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "events",
+      "column_name": "end_datetime",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "events",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "events",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "events",
+      "column_name": "isVisible",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "events",
+      "column_name": "isAvailable",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "event_creators",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "event_creators",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "event_creators",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "event_organizers",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "event_organizers",
+      "column_name": "event_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "event_organizers",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "event_organizers",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "event_registrations",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "event_registrations",
+      "column_name": "event_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "event_registrations",
+      "column_name": "total_tickets",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "event_registrations",
+      "column_name": "price",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "event_registrations",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "event_registrations",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "event_registrations",
+      "column_name": "ticket_types",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "ticket_counts",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "total_amount",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "user_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "super_admins",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "event_datetime",
+      "data_type": "date"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "user_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "event_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "ticket_type_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "customer_email",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "customer_phone",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "event_creators",
+      "column_name": "phone",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "events",
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "payment_status",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "payment_id",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "payment_link",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "events",
+      "column_name": "mode",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "event_creators",
+      "column_name": "personal_email",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "event_creators",
+      "column_name": "professional_email",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "events",
+      "column_name": "poster_url",
+      "data_type": "text"
+    },
+    {
+      "table_name": "user_tickets",
+      "column_name": "customer_name",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "events",
+      "column_name": "location",
+      "data_type": "text"
+    },
+    {
+      "table_name": "events",
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "table_name": "events",
+      "column_name": "category",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "events",
+      "column_name": "agenda",
+      "data_type": "text"
+    },
+    {
+      "table_name": "event_organizers",
+      "column_name": "personal_email",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "event_organizers",
+      "column_name": "college_email",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "event_organizers",
+      "column_name": "phone",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "payment_id",
+      "data_type": "text"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "customer_name",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "customer_email",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "customer_phone",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "event_registrations",
+      "column_name": "event_type",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "event_organizers",
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "event_creators",
+      "column_name": "name",
+      "data_type": "character varying"
+    }
+  ]
