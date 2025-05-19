@@ -1,60 +1,124 @@
-.eventCard {
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 24px;
-    width: 100%;
-    transition: transform 0.2s;
+.event-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.event-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.event-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.event-title h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.event-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.dates {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Loading state */
+.imageSkeleton {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
   }
-  
-  .eventCard:hover {
-    transform: translateY(-2px);
+  100% {
+    background-position: -200% 0;
   }
-  
-  .eventImageContainer {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    border-radius: 12px;
-  }
-  
-  .eventImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-  .eventInfo {
-    padding: 12px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .event-image-container {
+    height: 180px;
   }
 
-  
-  .eventName h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-    color: #222222;
+  .event-content {
+    padding: 1rem;
   }
-  
-  .location {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 14px;
+
+  .event-title h3 {
+    font-size: 1rem;
   }
-  
-  .star {
-    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .event-image-container {
+    height: 160px;
   }
-  
-  .distance,
-  .dates {
-    margin: 4px 0;
-    color: #717171;
-    font-size: 14px;
+
+  .event-content {
+    padding: 0.875rem;
   }
-  
+
+  .event-title h3 {
+    font-size: 0.95rem;
+  }
+}
 
   

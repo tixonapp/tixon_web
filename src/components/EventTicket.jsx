@@ -1,10 +1,12 @@
-import React from 'react';
 import { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { QRCodeSVG } from 'qrcode.react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import '../styles/EventTicket.css';
 
 const EventTicket = ({ event, purchaseData, ticketType, index }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded] = useState(false);
   const ticketRef = useRef(null);
   
   if (!event || !purchaseData || !ticketType) return null;
@@ -46,9 +48,36 @@ const EventTicket = ({ event, purchaseData, ticketType, index }) => {
     }, 500);
   };
   
-  const handleDownloadTicket = () => {
-    // A simple implementation for download functionality
-    alert('Download functionality would be implemented here');
+  const handleDownloadTicket = async () => {
+    if (!ticketRef.current) return;
+    
+    try {
+      // Create a canvas from the ticket element
+      const canvas = await html2canvas(ticketRef.current, {
+        scale: 2,
+        logging: false,
+        useCORS: true,
+      });
+      
+      // Create PDF
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      // Convert canvas to image
+      const imgData = canvas.toDataURL('image/png');
+      
+      // Calculate dimensions to fit ticket on page
+      const imgWidth = 210 - 30; // A4 width (210mm) - margins
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      
+      // Add image to PDF
+      pdf.addImage(imgData, 'PNG', 15, 15, imgWidth, imgHeight);
+      
+      // Save the PDF
+      pdf.save(`Ticket_${event.name}_${ticketId}.pdf`);
+    } catch (err) {
+      console.error('Error generating PDF:', err);
+      alert('Failed to generate PDF. Please try again.');
+    }
   };
   
   return (
@@ -119,6 +148,25 @@ const EventTicket = ({ event, purchaseData, ticketType, index }) => {
       </div>
     </div>
   );
+};
+
+EventTicket.propTypes = {
+  event: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    start_datetime: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    poster_url: PropTypes.string
+  }).isRequired,
+  purchaseData: PropTypes.shape({
+    payment_id: PropTypes.string.isRequired,
+    customer_name: PropTypes.string.isRequired,
+    customer_email: PropTypes.string.isRequired,
+    customer_phone: PropTypes.string.isRequired,
+    ticket_counts: PropTypes.object.isRequired
+  }).isRequired,
+  ticketType: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default EventTicket; 

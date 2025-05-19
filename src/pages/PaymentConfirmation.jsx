@@ -38,7 +38,7 @@ const PaymentConfirmation = () => {
         // Fetch event details
         const { data: eventData, error: eventError } = await supabase
           .from('events')
-          .select('*')
+          .select('id, name, start_datetime, location, poster_url')
           .eq('id', ticketData.event_id)
           .single();
           
@@ -184,9 +184,10 @@ const PaymentConfirmation = () => {
           <div className="purchase-details">
             <p><strong>Event:</strong> {eventData?.name}</p>
             <p><strong>Date:</strong> {new Date(eventData?.start_datetime).toLocaleDateString()}</p>
-              <p><strong>Total Amount:</strong> ₹{purchaseData.total_amount}</p>
-              <p><strong>Purchase Time:</strong> {new Date(purchaseData.purchase_time).toLocaleString()}</p>
-            </div>
+            <p><strong>Location:</strong> {eventData?.location}</p>
+            <p><strong>Total Amount:</strong> ₹{purchaseData.total_amount}</p>
+            <p><strong>Purchase Time:</strong> {new Date(purchaseData.purchase_time).toLocaleString()}</p>
+          </div>
           
           <button 
             className="download-all-btn" 
@@ -195,13 +196,13 @@ const PaymentConfirmation = () => {
           >
             {downloading ? 'Generating PDF...' : 'Download All Tickets (PDF)'}
           </button>
-          </div>
+        </div>
 
         <div className="tickets-section" ref={ticketsContainerRef}>
           <h2>Your Tickets</h2>
           
           {ticketTypes.map((ticketType) => {
-            const quantity = ticketCounts[ticketType].quantity;
+            const quantity = ticketCounts[ticketType];
             // Generate a ticket for each quantity of this ticket type
             return Array.from({ length: quantity }, (_, i) => (
               <EventTicket 

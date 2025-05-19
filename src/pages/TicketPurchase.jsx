@@ -15,7 +15,6 @@ const TicketPurchase = () => {
   const [submitting, setSubmitting] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
-  // Zoho configuration from environment variables
   const ZOHO_CONFIG = {
     accountId: import.meta.env.VITE_APP_ZOHO_ACCOUNT_ID,
     apiKey: import.meta.env.VITE_APP_ZOHO_API_KEY,
@@ -23,14 +22,13 @@ const TicketPurchase = () => {
   };
 
   useEffect(() => {
-    // Check for authenticated user
     const getAuthUser = async () => {
       const { data } = await supabase.auth.getUser();
       setCurrentUser(data.user);
     };
-    
+
     getAuthUser();
-    
+
     const fetchEvent = async () => {
       try {
         const { data, error } = await supabase
@@ -98,17 +96,114 @@ const TicketPurchase = () => {
   };
 
   useEffect(() => {
-    // Add the zpayments.js script to the page when component mounts
     const script = document.createElement('script');
     script.src = 'https://static.zohocdn.com/zpay/zpay-js/v1/zpayments.js';
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
-      // Cleanup: remove the script when component unmounts
       document.body.removeChild(script);
     };
   }, []);
+
+  const sendTicketEmail = async (email, ticketDetails) => {
+    try {
+      // Format ticket details into HTML
+      const formattedTicketDetails = `
+        <h2>Event: ${ticketDetails.event_name}</h2>
+        <p><strong>Date:</strong> ${new Date(ticketDetails.event_datetime).toLocaleDateString()}</p>
+        <p><strong>Location:</strong> ${ticketDetails.event_location}</p>
+        <p><strong>Total Amount Paid:</strong> ₹${ticketDetails.total_amount}</p>
+        <h3>Tickets:</h3>
+        <ul>
+          ${Object.entries(ticketDetails.ticket_counts)
+            .map(
+              ([ticketType, count]) =>
+                `<li>${ticketType}: ${count} ticket(s)</li>`
+            )
+            .join('')}
+        </ul>
+        <h4>You can download your tickets as a PDF using the link below:</h4>
+        <a href="${import.meta.env.VITE_APP_DOMAIN}/tickets/${ticketDetails.id}" target="_blank">Download PDF</a>
+      `;
+
+      // Add retry logic for failed requests
+      const maxRetries = 3;
+      let retryCount = 0;
+      let lastError = null;
+
+      while (retryCount < maxRetries) {
+        try {
+          const response = await fetch(
+            `${import.meta.env.VITE_APP_SUPABASE_FUNCTION_URL}`,
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${import.meta.env.VITE_APP_SUPABASE_SERVICE_ROLE_KEY}`,
+              },
+              body: JSON.stringify({
+                email,
+                subject: `Your Tickets for ${ticketDetails.event_name}`,
+                html: `
+                  <h1>Thank you for your purchase!</h1>
+                  ${formattedTicketDetails}
+                `,
+              }),
+            }
+          );
+
+          if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+          }
+
+          // If successful, break the retry loop
+          console.log('Ticket email sent successfully');
+          return true;
+        } catch (error) {
+          lastError = error;
+          retryCount++;
+          
+          // If we haven't reached max retries, wait before retrying
+          if (retryCount < maxRetries) {
+            // Exponential backoff: wait longer between each retry
+            const delay = Math.min(1000 * Math.pow(2, retryCount), 10000);
+            await new Promise(resolve => setTimeout(resolve, delay));
+          }
+        }
+      }
+
+      // If we've exhausted all retries, throw the last error
+      throw lastError;
+    } catch (error) {
+      console.error('Error sending ticket email:', error);
+      
+      // Log the error to your error tracking service
+      try {
+        await fetch(`${import.meta.env.VITE_APP_SUPABASE_FUNCTION_URL}/log-error`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${import.meta.env.VITE_APP_SUPABASE_SERVICE_ROLE_KEY}`,
+          },
+          body: JSON.stringify({
+            error: error.message,
+            ticketId: ticketDetails.id,
+            email,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+      } catch (logError) {
+        console.error('Failed to log error:', logError);
+      }
+
+      // Don't throw the error to prevent the purchase flow from breaking
+      // Instead, we'll handle it gracefully and let the user know
+      alert('There was an issue sending your ticket email. You can still access your tickets from the confirmation page.');
+      return false;
+    }
+  };
 
   const handleCheckout = async () => {
     const hasTickets = Object.values(ticketCounts).some(count => count > 0);
@@ -120,17 +215,15 @@ const TicketPurchase = () => {
     setSubmitting(true);
 
     try {
-      // Create payment session
       const paymentSession = await createPaymentSession();
       console.log('Payment session created:', paymentSession);
-      
-      // Make sure the script is loaded
+
       if (!window.ZPayments) {
         await new Promise((resolve, reject) => {
           const timeout = setTimeout(() => {
             reject(new Error("Timed out waiting for ZPayments to load"));
           }, 5000);
-          
+
           const checkScript = setInterval(() => {
             if (window.ZPayments) {
               clearInterval(checkScript);
@@ -140,8 +233,7 @@ const TicketPurchase = () => {
           }, 100);
         });
       }
-      
-      // Initialize Zoho Payments with proper configuration
+
       const zpayments = new window.ZPayments({
         account_id: ZOHO_CONFIG.accountId,
         domain: ZOHO_CONFIG.domain,
@@ -149,10 +241,7 @@ const TicketPurchase = () => {
           api_key: ZOHO_CONFIG.apiKey
         }
       });
-      
-      console.log('Zoho payments initialized');
-      
-      // Set up payment options according to Zoho documentation
+
       const options = {
         payments_session_id: paymentSession.id,
         amount: totalAmount.toString(),
@@ -167,34 +256,24 @@ const TicketPurchase = () => {
           phone: customer.phone
         }
       };
-      
-      console.log('Payment options:', options);
-      
+
       try {
-        // Initiate payment with the checkout widget
         const result = await zpayments.requestPaymentMethod(options);
         console.log('Payment result:', result);
-        
-        // Handle successful payment
+
         if (result && result.payment_id) {
-          // Save tickets and get the ticket data
           const ticketData = await saveTickets(result.payment_id);
           console.log('Ticket data saved successfully:', ticketData);
-          
-          // Redirect to payment confirmation page that shows the tickets
+
+          // Send ticket details via email
+          await sendTicketEmail(customer.email, ticketData);
+
           navigate(`/confirmation/${result.payment_id}`);
         } else {
           throw new Error('Payment failed: No payment ID returned');
         }
       } catch (err) {
-        console.error('Widget error details:', {
-          message: err.message,
-          code: err.code,
-          name: err.name,
-          stack: err.stack,
-          error: JSON.stringify(err)
-        });
-        
+        console.error('Widget error details:', err);
         if (err.code !== 'widget_closed') {
           handlePaymentError(err);
         }
@@ -207,7 +286,6 @@ const TicketPurchase = () => {
   };
 
   const createPaymentSession = async () => {
-    // Create request exactly as expected by the backend/Zoho API
     const requestBody = {
       amount: totalAmount,
       currency: 'INR',
@@ -218,9 +296,7 @@ const TicketPurchase = () => {
       customer_email: customer.email,
       customer_phone: customer.phone
     };
-    
-    console.log('Sending to backend:', requestBody);
-    
+
     const response = await fetch(`https://outhserver.onrender.com/api/create-payment-session`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -228,17 +304,15 @@ const TicketPurchase = () => {
     });
 
     const data = await response.json();
-    
-    // Check for errors in the response
+
     if (!response.ok || data.error) {
-      console.error('Payment session error:', data);
       throw new Error(data.error || `HTTP Error: ${response.status}`);
     }
-    
+
     if (!data.payments_session_id) {
       throw new Error('Payment session creation failed: No session ID returned');
     }
-    
+
     return { id: data.payments_session_id };
   };
 
@@ -249,31 +323,8 @@ const TicketPurchase = () => {
   };
 
   const saveTickets = async (paymentId) => {
-    // Get user ID if logged in, otherwise generate a UUID
     const userId = currentUser?.id || uuidv4();
-    
-    // Debug: log event registration data
-    console.log('Full event registration:', event.event_registrations);
-    console.log('Ticket counts:', ticketCounts);
-    
-    // Get ticket types data
-    let ticketTypes = [];
-    try {
-      if (typeof event.event_registrations.ticket_types === 'string') {
-        ticketTypes = JSON.parse(event.event_registrations.ticket_types);
-      } else if (Array.isArray(event.event_registrations.ticket_types)) {
-        ticketTypes = event.event_registrations.ticket_types;
-      } else {
-        const typesObj = event.event_registrations.ticket_types;
-        ticketTypes = Object.keys(typesObj).map(key => typesObj[key]);
-      }
-    } catch (e) {
-      console.error('Error parsing ticket types:', e);
-    }
-    
-    console.log('Processed ticket types:', ticketTypes);
-    
-    // Create a single ticket entry with all ticket types
+
     const ticketEntry = {
       id: uuidv4(),
       event_id: event.id,
@@ -284,90 +335,26 @@ const TicketPurchase = () => {
       customer_email: customer.email,
       customer_phone: customer.phone,
       total_amount: totalAmount,
-      ticket_counts: {},
-      // Add these additional fields to enhance the ticket display
+      ticket_counts: ticketCounts,
       purchase_status: 'completed',
       event_name: event.name,
       event_datetime: event.start_datetime,
       event_location: event.location
     };
-    
-    // Add ticket details to the ticket_counts JSON
-    Object.keys(ticketCounts)
-      .filter(ticketName => ticketCounts[ticketName] > 0)
-      .forEach(ticketName => {
-        const matchingTicket = ticketTypes.find(t => t.name === ticketName);
-        ticketEntry.ticket_counts[ticketName] = {
-          quantity: ticketCounts[ticketName],
-          price: matchingTicket?.price || 0,
-          ticket_type_id: matchingTicket?.id || null,
-          // Add these fields for each ticket type for better display in the ticket
-          ticket_name: ticketName,
-          ticket_description: matchingTicket?.description || ''
-        };
-      });
-      
-    console.log('Ticket entry to insert:', ticketEntry);
-    
-    // Insert the consolidated ticket entry into user_tickets table
+
     const { error: ticketInsertError } = await supabase.from('user_tickets').insert([ticketEntry]);
-    
+
     if (ticketInsertError) {
-      console.error('Insert error details:', ticketInsertError);
       throw new Error('Failed to save tickets: ' + ticketInsertError.message);
     }
-    
-    // Update the ticket quantities in the event_registrations table
-    // First get the current event registration data
-    const { data: registrationData, error: fetchError } = await supabase
-      .from('event_registrations')
-      .select('ticket_types')
-      .eq('event_id', event.id)
-      .single();
-      
-    if (fetchError) {
-      console.error('Error fetching current ticket data:', fetchError);
-      throw new Error('Failed to update ticket quantities: ' + fetchError.message);
-    }
-    
-    // Update the ticket quantities
-    let updatedTicketTypes = [...registrationData.ticket_types];
-    
-    Object.keys(ticketCounts)
-      .filter(ticketName => ticketCounts[ticketName] > 0)
-      .forEach(ticketName => {
-        const ticketIndex = updatedTicketTypes.findIndex(t => t.name === ticketName);
-        if (ticketIndex !== -1) {
-          // Deduct the purchased quantity from available quantity
-          updatedTicketTypes[ticketIndex].quantity -= ticketCounts[ticketName];
-          // Ensure quantity doesn't go below zero
-          if (updatedTicketTypes[ticketIndex].quantity < 0) {
-            updatedTicketTypes[ticketIndex].quantity = 0;
-          }
-        }
-      });
-    
-    // Update the event_registrations table with the new ticket quantities
-    const { error: updateError } = await supabase
-      .from('event_registrations')
-      .update({ ticket_types: updatedTicketTypes })
-      .eq('event_id', event.id);
-      
-    if (updateError) {
-      console.error('Error updating ticket quantities:', updateError);
-      console.warn('Tickets were sold but quantities were not updated properly');
-      // We don't throw here because the tickets were already created successfully
-    } else {
-      console.log('Successfully updated ticket quantities');
-    }
-    
+
     return ticketEntry;
   };
 
   const handlePaymentError = (error) => {
     console.error('Payment Error:', error);
-    const message = error.code === 'payment_declined' 
-      ? 'Payment declined. Please try another method.' 
+    const message = error.code === 'payment_declined'
+      ? 'Payment declined. Please try another method.'
       : 'Payment failed. Please try again.';
     alert(message);
   };

@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { supabase } from "../supabase/supabaseClient";
 import { isSuperAdmin } from "../supabase/superAdminHelpers";
+import MDEditor from '@uiw/react-md-editor';
 import "./AdminPanel.css";
 
 const AdminEventEdit = () => {
@@ -98,10 +99,17 @@ const AdminEventEdit = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
+    setFormData(prev => ({
+      ...prev,
       [name]: type === 'checkbox' ? checked : value
-    });
+    }));
+  };
+
+  const handleMarkdownChange = (name, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [name]: value || ''
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -290,25 +298,34 @@ const AdminEventEdit = () => {
           </div>
           )}
 
-          <div className="form-group">
-            <label>Description</label>
-            <textarea
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              rows="5"
-              required
-            />
+          <div className="form-group markdown-editor-group">
+            <label>Description*</label>
+            <div data-color-mode="light">
+            <div className="markdown-editor-container">
+              <MDEditor
+                value={formData.description || ''}
+                onChange={(value) => handleMarkdownChange('description', value)}
+                preview="edit"
+                height={300}
+                className="markdown-editor"
+              />
+              <small className="form-text">Use markdown to format your description. Supports headings, lists, links, and more.</small>
+            </div>
+            </div>
           </div>
 
-          <div className="form-group">
+          <div className="form-group markdown-editor-group">
             <label>Agenda</label>
-            <textarea
-              name="agenda"
-              value={formData.agenda}
-              onChange={handleChange}
-              rows="3"
-            />
+            <div className="markdown-editor-container">
+              <MDEditor
+                value={formData.agenda || ''}
+                onChange={(value) => handleMarkdownChange('agenda', value)}
+                preview="edit"
+                height={300}
+                className="markdown-editor"
+              />
+              <small className="form-text">Use markdown to format your agenda. Supports headings, lists, and more.</small>
+            </div>
           </div>
 
           <div className="form-actions">

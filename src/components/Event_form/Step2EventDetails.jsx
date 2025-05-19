@@ -1,5 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { supabase } from '../../supabase/supabaseClient';
+import MDEditor from '@uiw/react-md-editor';
+import './Step2EventDetails.css';
 
 export default function Step2EventDetails({ formRef, formData, handleChange }) {
   const autocompleteRef = useRef(null);
@@ -10,7 +13,7 @@ export default function Step2EventDetails({ formRef, formData, handleChange }) {
   const [previewUrl, setPreviewUrl] = useState(formData.poster_url || '');
   const [placeSelected, setPlaceSelected] = useState(false);
   
-  const BUCKET_NAME = 'imagestore'; // Define bucket name as constant
+  const BUCKET_NAME = 'imagestore';
 
   useEffect(() => {
     // Load Google Maps API script
@@ -151,14 +154,15 @@ export default function Step2EventDetails({ formRef, formData, handleChange }) {
   };
 
   // Handle poster file selection
-  const handlePosterFileChange = (e) => {
-    const file = e.target.files[0];
+  const handlePosterFileChange = (event) => {
+    const file = event.target.files[0];
     if (file) {
       setPosterFile(file);
-      // Create a preview URL for the selected image
-      const objectUrl = URL.createObjectURL(file);
-      setPreviewUrl(objectUrl);
-      console.log("Preview URL created:", objectUrl);
+      const reader = new FileReader();
+      reader.onload = () => {
+        setPreviewUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -243,6 +247,16 @@ export default function Step2EventDetails({ formRef, formData, handleChange }) {
     }
   }, [posterFile]);
 
+  const handleDescriptionChange = (value) => {
+    const event = {
+      target: {
+        name: 'description',
+        value: value || ''
+      }
+    };
+    handleChange(event);
+  };
+
   return (
     <form ref={formRef} className="form-section">
       <div className="form-group">
@@ -315,9 +329,20 @@ export default function Step2EventDetails({ formRef, formData, handleChange }) {
         {/* <small className="form-text">Use Google Maps to search for a location</small> */}
         <input type="hidden" name="location_data" value={formData.location_data || '{}'} />
       </div>
-      <div className="form-group">
+      <div className="form-group markdown-editor-group">
         <label>Description*</label>
-        <textarea name="description" value={formData.description || ''} onChange={handleChange} required />
+        <div className="markdown-editor-container">
+          <div data-color-mode="light">
+            <MDEditor
+              value={formData.description || ''}
+              onChange={handleDescriptionChange}
+              preview="edit"
+              height={300}
+              className="markdown-editor"
+            />
+          </div>
+          <small className="form-text">Use markdown to format your description. Supports headings, lists, links, and more.</small>
+        </div>
       </div>
       <div className="form-group">
         <label>Category*</label>
@@ -331,10 +356,46 @@ export default function Step2EventDetails({ formRef, formData, handleChange }) {
           <option value="Entrepreneurship Events">Entrepreneurship Events</option>
         </select>
       </div>
-      <div className="form-group">
+      <div className="form-group markdown-editor-group">
         <label>Agenda</label>
-        <textarea name="agenda" value={formData.agenda || ''} onChange={handleChange} />
+        <div className="markdown-editor-container">
+          <div data-color-mode="light">
+            <MDEditor
+              value={formData.agenda || ''}
+              onChange={(value) => {
+                const event = {
+                  target: {
+                    name: 'agenda',
+                    value: value || ''
+                  }
+                };
+                handleChange(event);
+              }}
+              preview="edit"
+              height={300}
+              className="markdown-editor"
+            />
+          </div>
+          <small className="form-text">Use markdown to format your agenda. Supports headings, lists, and more.</small>
+        </div>
       </div>
     </form>
   );
 }
+
+Step2EventDetails.propTypes = {
+  formRef: PropTypes.object.isRequired,
+  formData: PropTypes.shape({
+    event_name: PropTypes.string,
+    mode: PropTypes.string,
+    start_datetime: PropTypes.string,
+    end_datetime: PropTypes.string,
+    poster_url: PropTypes.string,
+    location: PropTypes.string,
+    location_data: PropTypes.string,
+    description: PropTypes.string,
+    category: PropTypes.string,
+    agenda: PropTypes.string
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired
+};

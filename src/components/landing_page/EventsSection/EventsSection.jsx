@@ -3,6 +3,18 @@ import EventCard from "../EventCard/EventCard";
 import { useFilters } from '../../../Context/FilterContext';
 import { supabase } from '../../../supabase/supabaseClient';
 import EventCarousel from '../EventCarousel/EventCarousel';
+import LoadingSpinner from '../../common/LoadingSpinner';
+import { 
+  FaStar, 
+  FaTools, 
+  FaMicrophone, 
+  FaFileAlt, 
+  FaLaptopCode, 
+  FaTheaterMasks, 
+  FaBriefcase,
+  FaFire,
+  FaCalendarAlt
+} from 'react-icons/fa';
 import "./EventsSection.css";
 
 const EventSections = () => {
@@ -15,20 +27,19 @@ const EventSections = () => {
 
   // Category definitions with icons
   const categories = [
-    { id: 'All', name: 'All Events', icon: '🌟' },
-    { id: 'Workshops', name: 'Workshops', icon: '🔧' },
-    { id: 'Symposium', name: 'Symposium', icon: '🎤' },
-    { id: 'Paper Presentation', name: 'Paper Presentation', icon: '📝' },
-    { id: 'Hackathons', name: 'Hackathons', icon: '💻' },
-    { id: 'Cultural Fests', name: 'Cultural Fests', icon: '🎭' },
-    { id: 'Entrepreneurship Events', name: 'Entrepreneurship', icon: '💼' }
+    { id: 'All', name: 'All Events', icon: <FaStar /> },
+    { id: 'Workshops', name: 'Workshops', icon: <FaTools /> },
+    { id: 'Symposium', name: 'Symposium', icon: <FaMicrophone /> },
+    { id: 'Paper Presentation', name: 'Paper Presentation', icon: <FaFileAlt /> },
+    { id: 'Hackathons', name: 'Hackathons', icon: <FaLaptopCode /> },
+    { id: 'Cultural Fests', name: 'Cultural Fests', icon: <FaTheaterMasks /> },
+    { id: 'Entrepreneurship Events', name: 'Entrepreneurship', icon: <FaBriefcase /> }
   ];
 
   // Fetch events from Supabase with related data
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        // Fetch events with event_registrations data
         const { data, error } = await supabase
           .from('events')
           .select(`
@@ -77,7 +88,7 @@ const EventSections = () => {
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    setVisibleEvents(8); // Reset visible events when changing category
+    setVisibleEvents(8);
   };
 
   const filteredEvents = events.filter(event => {
@@ -96,13 +107,17 @@ const EventSections = () => {
     return matchesLocation && matchesEventType && matchesDate && matchesCategory;
   });
 
+  // Separate events by classification
+  const upcomingEvents = filteredEvents.filter(event => event.classification === 'upcoming');
+  const popularEvents = filteredEvents.filter(event => event.classification === 'popular');
+
   const eventsToDisplay = filteredEvents.slice(0, visibleEvents);
 
   const handleLoadMore = () => {
     setVisibleEvents(prevVisible => prevVisible + 8);
   };
 
-  if (loading) return <div className="loading">Loading events...</div>;
+  if (loading) return <LoadingSpinner />;
   if (error) return <div className="error">Error loading events</div>;
 
   return (
@@ -110,6 +125,7 @@ const EventSections = () => {
       {/* Event Carousel */}
       <EventCarousel events={events} />
       
+      {/* Category Filters */}
       <div className="categoryFilters">
         {categories.map(category => (
           <button 
@@ -122,26 +138,69 @@ const EventSections = () => {
           </button>
         ))}
       </div>
-      
-      <div className="eventsSection">
-        {eventsToDisplay.length > 0 ? (
-          eventsToDisplay.map((event) => (
-            <EventCard 
-              key={event.id} 
-              event={event}
-            />
-          ))
-        ) : (
-          <div className="no-events">No events found</div>
-        )}
-      </div>
-      {visibleEvents < filteredEvents.length && (
-        <div className="loadMoreContainer">
-          <button className="loadMoreButton" onClick={handleLoadMore}>
-            Show More Events
-          </button>
+
+      {/* Popular Events Section */}
+      {popularEvents.length > 0 && (
+        <div className="eventsClassificationSection">
+          <h2 className="sectionTitle">
+            <span className="titleIcon"><FaFire /></span>
+            Popular Events
+          </h2>
+          <div className="eventsGrid">
+            {popularEvents.map((event) => (
+              <EventCard 
+                key={event.id} 
+                event={event}
+              />
+            ))}
+          </div>
         </div>
       )}
+
+      {/* Upcoming Events Section */}
+      {upcomingEvents.length > 0 && (
+        <div className="eventsClassificationSection">
+          <h2 className="sectionTitle">
+            <span className="titleIcon"><FaCalendarAlt /></span>
+            Upcoming Events
+          </h2>
+          <div className="eventsGrid">
+            {upcomingEvents.map((event) => (
+              <EventCard 
+                key={event.id} 
+                event={event}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* All Events Section */}
+      <div className="eventsClassificationSection">
+        <h2 className="sectionTitle">
+          <span className="titleIcon"><FaStar /></span>
+          All Events
+        </h2>
+        <div className="eventsGrid">
+          {eventsToDisplay.length > 0 ? (
+            eventsToDisplay.map((event) => (
+              <EventCard 
+                key={event.id} 
+                event={event}
+              />
+            ))
+          ) : (
+            <div className="no-events">No events found</div>
+          )}
+        </div>
+        {visibleEvents < filteredEvents.length && (
+          <div className="loadMoreContainer">
+            <button className="loadMoreButton" onClick={handleLoadMore}>
+              Show More Events
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -5,21 +5,43 @@
     /* border-radius: 12px; */
     overflow: hidden;
     background: #ffffff;
+    padding: 4rem 2rem;
+    position: relative;
+  }
+  
+  .venue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(45deg, #0066cc, #0052a3);
+    border-radius: 2px;
   }
   
   .venue-content {
     display: grid;
-    grid-template-columns: 4fr 6fr; /* 40-60 split */
+    grid-template-columns: 4fr 6fr;
     align-items: stretch;
-    /* gap: 1rem; */
-    padding: 2rem;
+    gap: 2rem;
     min-height: 500px;
+    margin-top: 2rem;
   }
   
   .venue-left {
     display: flex;
     flex-direction: column;
-    /* gap: 1rem; */
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .venue-left:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   }
   
   .venue-image {
@@ -34,7 +56,14 @@
     height: 100%;
     min-height: 400px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .map:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   }
   
   .venue-button {
@@ -53,7 +82,25 @@
     background: #0052a3;
   }
   
+  @media (max-width: 1024px) {
+    .venue {
+      padding: 3rem 1.5rem;
+    }
+    
+    .venue-content {
+      gap: 1.5rem;
+    }
+    
+    .university-name {
+      font-size: 1.5rem;
+    }
+  }
+  
   @media (max-width: 768px) {
+    .venue {
+      padding: 2rem 1rem;
+    }
+    
     .venue-content {
       grid-template-columns: 1fr;
       min-height: auto;
@@ -61,65 +108,93 @@
     
     .map {
       height: 300px;
+      order: -1;
     }
     
-    .venue-button {
-      margin-top: 1rem;
+    .address-card {
+      padding: 1.5rem;
     }
   }
-  /* Add these styles to your Venue.css */
-.venue-left {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+  
+  @media (max-width: 480px) {
+    .venue {
+      padding: 1.5rem 1rem;
+    }
+    
+    .university-name {
+      font-size: 1.25rem;
+    }
+    
+    .address-details p {
+      font-size: 1rem;
+    }
+    
+    .directions-button {
+      padding: 0.75rem 1.5rem;
+    }
   }
   
   .address-card {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 2rem;
   }
   
   .university-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    font-weight: 700;
     color: #1a1a1a;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  
+  .university-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, #0066cc, #0052a3);
+    border-radius: 1.5px;
   }
   
   .address-details p {
-    margin: 0.25rem 0;
+    margin: 0.5rem 0;
     color: #666;
-    line-height: 1.4;
+    line-height: 1.6;
+    font-size: 1.1rem;
   }
   
   .divider {
     border: 0;
-    border-top: 1px solid #e0e0e0;
+    border-top: 2px solid #e9ecef;
     margin: 1.5rem 0;
   }
   
-  .directions-section h3 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #333;
+  .directions-section {
+    margin-top: auto;
   }
   
   .directions-button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid #0066cc;
-    color: #0066cc;
-    border-radius: 4px;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #0066cc, #0052a3);
+    color: #ffffff;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
   
   .directions-button:hover {
-    background: #0066cc;
-    color: white;
+    background: linear-gradient(45deg, #0052a3, #003d7a);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
   }
-  
-  /* Keep existing responsive styles */
