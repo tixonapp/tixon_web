@@ -5,6 +5,7 @@ import HeroBanner from "../components/Event_page/HeroBanner/HeroBanner";
 import Description from "../components/Event_page/Description/Description";
 import Venue from "../components/Event_page/Venue/Venue";
 import Contact from "../components/Event_page//Contact/Contact";
+import LoadingSpinner from '../components/common/LoadingSpinner';
 import "./EventPage.css";
 
 const EventPage = () => {
@@ -71,26 +72,9 @@ const EventPage = () => {
     fetchEvent();
   }, [id, navigate]);
 
-  if (loading) {
-    return (
-      <div className="event-page">
-        <div className="loading-content">
-          <h2>Loading event details...</h2>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !event) {
-    return (
-      <div className="error-page">
-        <div className="error-content">
-          <h2><strong>Event Not Found</strong></h2>
-          <p>The requested event does not exist or has been removed.</p>
-        </div>
-      </div>
-    );
-  }
+  if (loading) return <LoadingSpinner />;
+  if (error) return <div className="error">Error loading event</div>;
+  if (!event) return <div className="error">Event not found</div>;
 
   return (
     <div className="event-page">

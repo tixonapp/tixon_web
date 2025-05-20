@@ -1,23 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { supabase } from '../../supabase/supabaseClient';
 import TicketTypesEditor from './TicketTypesEditor';
 import './TableStyles.css';
 
-const RegistrationsTable = () => {
+const RegistrationsTable = ({ userId }) => {
   const [registrations, setRegistrations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedRegistration, setExpandedRegistration] = useState(null);
+  const [userEvents, setUserEvents] = useState([]);
 
   useEffect(() => {
-    fetchRegistrations();
-  }, []);
+    if (userId) {
+      fetchUserEvents();
+    }
+  }, [userId]);
 
-  const fetchRegistrations = async () => {
+  const fetchUserEvents = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('events')
+        .select('id')
+        .eq('creator_id', userId);
+
+      if (error) throw error;
+      setUserEvents(data || []);
+      
+      if (data && data.length > 0) {
+        fetchRegistrations(data.map(event => event.id));
+      } else {
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error('Error fetching user events:', error);
+      setLoading(false);
+    }
+  };
+
+  const fetchRegistrations = async (eventIds) => {
     try {
       setLoading(true);
       const { data, error } = await supabase
         .from('event_registrations')
-        .select('*, events(name)');
+        .select('*, events(name)')
+        .in('event_id', eventIds);
 
       if (error) throw error;
       setRegistrations(data || []);
@@ -30,7 +56,9 @@ const RegistrationsTable = () => {
   };
 
   const handleRegistrationUpdate = () => {
-    fetchRegistrations();
+    if (userEvents && userEvents.length > 0) {
+      fetchRegistrations(userEvents.map(event => event.id));
+    }
   };
 
   const toggleExpand = (id) => {
@@ -42,26 +70,31 @@ const RegistrationsTable = () => {
   return (
     <div className="table-container">
       <h2>Event Registrations</h2>
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Event</th>
-            <th>Type</th>
-            <th>Total Tickets</th>
-            <th>Price</th>
-            <th>Created At</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {registrations.length === 0 ? (
+      
+      {userEvents.length === 0 ? (
+        <div className="no-events-message">
+          <p>You need to create events before viewing registrations.</p>
+        </div>
+      ) : registrations.length === 0 ? (
+        <div className="no-data-message">
+          <p>No registrations found for your events.</p>
+        </div>
+      ) : (
+        <table className="data-table">
+          <thead>
             <tr>
-              <td colSpan="7" className="no-data">No registrations found</td>
+              <th>ID</th>
+              <th>Event</th>
+              <th>Type</th>
+              <th>Total Tickets</th>
+              <th>Price</th>
+              <th>Created At</th>
+              <th>Actions</th>
             </tr>
-          ) : (
-            registrations.map(registration => (
-              <React.Fragment key={registration.id}>
+          </thead>
+          <tbody>
+            {registrations.map(registration => (
+              <Fragment key={registration.id}>
                 <tr>
                   <td>{registration.id}</td>
                   <td>{registration.events?.name || 'N/A'}</td>
@@ -88,13 +121,17 @@ const RegistrationsTable = () => {
                     </td>
                   </tr>
                 )}
-              </React.Fragment>
-            ))
-          )}
-        </tbody>
-      </table>
+              </Fragment>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
+};
+
+RegistrationsTable.propTypes = {
+  userId: PropTypes.string.isRequired
 };
 
 export default RegistrationsTable;

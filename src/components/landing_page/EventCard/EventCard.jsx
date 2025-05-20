@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import "./EventCard.css";
 import React, { useState, useCallback, memo } from 'react';
@@ -35,36 +36,74 @@ const EventCard = memo(({ event }) => {
     }
   }, [event.start_datetime]);
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      y: -10,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const imageVariants = {
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <Link 
-      to={`/event/${event.id}`} 
-      className="eventCardLink" 
-      onClick={handleCardClick}
-      aria-label={`View details for ${event.name}`}
+    <motion.div
+      className="event-card"
+      variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+      whileHover="hover"
     >
-      <article className="eventCard">
-        <div className="eventImageContainer">
+      <Link 
+        to={`/event/${event.id}`} 
+        className="event-link" 
+        onClick={handleCardClick}
+        aria-label={`View details for ${event.name}`}
+      >
+        <motion.div 
+          className="event-image-container"
+          variants={imageVariants}
+        >
           {!imageLoaded && (
             <div className="imageSkeleton" aria-hidden="true" />
           )}
           <img
             src={imageError ? "/placeholder.svg" : event.poster_url || "/placeholder.svg"}
             alt={event.name}
-            className={`eventImage ${imageLoaded ? 'loaded' : 'loading'}`}
+            className={`event-image ${imageLoaded ? 'loaded' : 'loading'}`}
             loading="lazy"
             onLoad={handleImageLoad}
             onError={handleImageError}
             width="300"
             height="300"
           />
-        </div>
+        </motion.div>
 
-        <div className="eventInfo">
-          <header className="eventName">
+        <div className="event-content">
+          <header className="event-title">
             <h3>{event.name}</h3>
           </header>
           
-          <div className="eventMetadata">
+          <div className="event-metadata">
             <address className="location">
               <svg 
                 className="locationIcon" 
@@ -82,8 +121,8 @@ const EventCard = memo(({ event }) => {
             </time>
           </div>
         </div>
-      </article>
-    </Link>
+      </Link>
+    </motion.div>
   );
 });
 

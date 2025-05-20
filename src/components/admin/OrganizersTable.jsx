@@ -1,23 +1,59 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { supabase } from '../../supabase/supabaseClient';
 import './TableStyles.css';
 
-const OrganizersTable = () => {
+const OrganizersTable = ({ userId }) => {
   const [organizers, setOrganizers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editingOrganizer, setEditingOrganizer] = useState(null);
   const [formData, setFormData] = useState({});
+  const [userEvents, setUserEvents] = useState([]);
 
   useEffect(() => {
-    fetchOrganizers();
-  }, []);
+    if (userId) {
+      fetchOrganizers();
+      fetchUserEvents();
+    }
+  }, [userId]);
+
+  const fetchUserEvents = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('events')
+        .select('id, name')
+        .eq('creator_id', userId);
+
+      if (error) throw error;
+      setUserEvents(data || []);
+    } catch (error) {
+      console.error('Error fetching user events:', error);
+    }
+  };
 
   const fetchOrganizers = async () => {
     try {
       setLoading(true);
+      
+      // First get all events created by this user
+      const { data: userEvents, error: eventsError } = await supabase
+        .from('events')
+        .select('id')
+        .eq('creator_id', userId);
+        
+      if (eventsError) throw eventsError;
+      
+      if (!userEvents || userEvents.length === 0) {
+        setOrganizers([]);
+        return;
+      }
+      
+      // Then get all organizers for these events
+      const eventIds = userEvents.map(event => event.id);
       const { data, error } = await supabase
         .from('event_organizers')
-        .select('*, events(name)');
+        .select('*, events(name)')
+        .in('event_id', eventIds);
 
       if (error) throw error;
       setOrganizers(data || []);
@@ -66,28 +102,34 @@ const OrganizersTable = () => {
 
   return (
     <div className="table-container">
-      <h2>Event Organizers</h2>
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Event</th>
-            <th>Phone</th>
-            <th>Personal Email</th>
-            <th>College Email</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {organizers.length === 0 ? (
+      <div className="table-header">
+        <h2>Event Organizers</h2>
+      </div>
+      
+      {userEvents.length === 0 ? (
+        <div className="no-events-message">
+          <p>You need to create events before viewing organizers.</p>
+        </div>
+      ) : organizers.length === 0 ? (
+        <div className="no-data-message">
+          <p>No organizers found for your events.</p>
+          <p>Organizers can only be added through the event creation process.</p>
+        </div>
+      ) : (
+        <table className="data-table">
+          <thead>
             <tr>
-              <td colSpan="7" className="no-data">No organizers found</td>
+              <th>Name</th>
+              <th>Event</th>
+              <th>Phone</th>
+              <th>Personal Email</th>
+              <th>College Email</th>
+              <th>Actions</th>
             </tr>
-          ) : (
-            organizers.map(organizer => (
+          </thead>
+          <tbody>
+            {organizers.map(organizer => (
               <tr key={organizer.id}>
-                <td>{organizer.id}</td>
                 <td>
                   {editingOrganizer === organizer.id ? (
                     <input
@@ -152,12 +194,16 @@ const OrganizersTable = () => {
                   )}
                 </td>
               </tr>
-            ))
-          )}
-        </tbody>
-      </table>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
+};
+
+OrganizersTable.propTypes = {
+  userId: PropTypes.string.isRequired
 };
 
 export default OrganizersTable;
